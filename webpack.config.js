@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+require('dotenv').config();
 
 const CSSExtract = new ExtractTextPlugin('styles.css');
 
