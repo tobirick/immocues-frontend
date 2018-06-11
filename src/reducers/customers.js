@@ -5,8 +5,35 @@ const customersReducerDefaultState = [
       {
             id: '1',
             firstName: 'Tobi',
-            lastName: 'Rick'
-      }
+            lastName: 'Rick',
+            profileImageSrc: '/img/default-profile.png',
+            title: 'Testtitle',
+            eMail: 'tobirickmann@gmail.com',
+            phoneNumber: '08251/52264',
+            mobilePhoneNumber: '01637205965',
+            addressCity: 'Aichach',
+            addressZIPCode: '86551',
+            addressCountry: 'Germany',
+            addressState: 'Bavaria',
+            addressStreet: 'Erlenweg',
+            addressStreetNr: '1a'
+      },
+      {
+        id: '2',
+        firstName: 'Nik',
+        lastName: 'Rick',
+        profileImageSrc: '/img/default-profile.png',
+        title: 'Testtitle',
+        eMail: 'tobirickmann@gmail.com',
+        phoneNumber: '08251/52264',
+        mobilePhoneNumber: '01637205965',
+        addressCity: 'Aichach',
+        addressZIPCode: '86551',
+        addressCountry: 'Germany',
+        addressState: 'Bavaria',
+        addressStreet: 'Erlenweg',
+        addressStreetNr: '1a'
+  }
 ];
 
 export const createCustomer = (state, payload) => {

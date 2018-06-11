@@ -1,25 +1,32 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux';
 import CustomerListItem from './CustomerListItem';
 
-const mapState = (state) => ({
-    customers: state.customers
-})
 
 class CustomerList extends Component {
     render() {
-      const { customers } = this.props;
-      return (
-        <div>
-          {customers&& customers.map(customer => (
-            <CustomerListItem
-              key={customer.id}
-              customer={customer}
-            />
-          ))}
-        </div>
-      );
+        const { customers, setCustomer, selectedCustomer } = this.props;
+        return (
+            <div className="list-box">
+                <div className="list">
+                    <div className="list__header">
+                        <div className="list__header-item list__header-item--big">Name</div>
+                        <div className="list__header-item">Title</div>
+                        <div className="list__header-item">E-Mail</div>
+                        <div className="list__header-item">Phone Number</div>
+                    </div>
+                    {customers &&
+                        customers.map(customer => (
+                            <CustomerListItem
+                                key={customer.id}
+                                customer={customer}
+                                setCustomer={setCustomer}
+                                isSelected={selectedCustomer && selectedCustomer.id === customer.id}
+                            />
+                        ))}
+                </div>
+            </div>
+        );
     }
-  }
-  
-  export default connect(mapState)(CustomerList);
+}
+
+export default CustomerList;

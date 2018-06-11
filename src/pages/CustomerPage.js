@@ -30,15 +30,15 @@ const CustomerPage = ({ customer }) => {
       />
       <div className="content">
         <div className="row">
-          <div className="customer-page__left-sidebar col-3">
+          <div className="customer__left-sidebar col-3">
             <div className="content__box">
               <CustomerPageLeftSidebar customer={customer} />
             </div>
           </div>
 
-          <div className="customer-page__content col-6">Content</div>
+          <div className="customer__content col-6">Content</div>
 
-          <div className="customer-page__right-sidebar col-3">
+          <div className="customer__right-sidebar col-3">
             <div className="content__box">
               <CustomerPageRightSidebar />
             </div>

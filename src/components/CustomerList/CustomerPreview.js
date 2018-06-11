@@ -1,27 +1,36 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const CustomerPageLeftSidebar = ({ customer }) => {
+const CustomerPreview = ({ customer, setCustomer }) => {
     return (
-        <div>
-            <div className="customer__header-info">
-                <div className="customer__header-info-left">
+        <div className="customer__preview">
+            <div className="customer__preview-actions">
+                <div className="customer__preview-button">
+                    <Link to={`customers/${customer.id}`}>
+                        <i className="fas fa-arrow-right" />
+                    </Link>
+                </div>
+                <div
+                    onClick={setCustomer(null)}
+                    className="customer__preview-button"
+                >
+                    <i className="fal fa-times-circle" />
+                </div>
+            </div>
+            <div className="customer__preview-header">
+                <div className="customer__preview-header-left">
                     <img
-                        className="customer__header-info-image"
                         src={customer.profileImageSrc}
                         alt={`${customer.firstName} ${customer.lastName}`}
                     />
                 </div>
-                <div className="customer__header-info-center">
-                    <span className="customer__header-info-name">
+                <div className="customer__preview-header-right">
+                    <span className="customer__preview-header-name">
                         {customer.firstName} {customer.lastName}
                     </span>
-                    <span className="customer__header-info-title">
+                    <span className="customer__preview-header-title">
                         {customer.title}
                     </span>
-                </div>
-                <div className="customer__header-info-right">
-                    <i className="far fa-star" />
-                    <i className="far fa-ellipsis-v" />
                 </div>
             </div>
             <div className="customer__basic-info">
@@ -40,36 +49,43 @@ const CustomerPageLeftSidebar = ({ customer }) => {
                 </div>
 
                 <div className="customer__basic-info-item">
-                    <div className="customer__basic-info-item-label">E-Mail</div>
+                    <div className="customer__basic-info-item-label">
+                        E-Mail
+                    </div>
                     <div className="customer__basic-info-item-text">
                         {customer.eMail}
                     </div>
                 </div>
 
                 <div className="customer__basic-info-item">
-                    <div className="customer__basic-info-item-label">Phone Number</div>
+                    <div className="customer__basic-info-item-label">
+                        Phone Number
+                    </div>
                     <div className="customer__basic-info-item-text">
                         {customer.phoneNumber}
                     </div>
                 </div>
 
                 <div className="customer__basic-info-item">
-                    <div className="customer__basic-info-item-label">Mobile Phone Number</div>
+                    <div className="customer__basic-info-item-label">
+                        Mobile Phone Number
+                    </div>
                     <div className="customer__basic-info-item-text">
                         {customer.mobilePhoneNumber}
                     </div>
                 </div>
 
                 <div className="customer__basic-info-item">
-                    <div className="customer__basic-info-item-label">Address</div>
+                    <div className="customer__basic-info-item-label">
+                        Address
+                    </div>
                     <div className="customer__basic-info-item-text">
                         Google Maps Widget
                     </div>
                 </div>
-
             </div>
         </div>
     );
 };
 
-export default CustomerPageLeftSidebar;
+export default CustomerPreview;

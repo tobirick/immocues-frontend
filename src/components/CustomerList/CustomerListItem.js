@@ -1,17 +1,23 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
 
 class CustomerListItem extends Component {
     render() {
-      const { customer } = this.props;
-      return (
-        <div>
-            <Link to={`/customers/${customer.id}`}>
-                <h1>{customer.firstName} {customer.lastName}</h1>
-          </Link>
-        </div>
-      );
+        const { customer, setCustomer, isSelected } = this.props;
+        return (
+            <div onClick={setCustomer(customer)} className={`list__item ${isSelected ? 'selected' : ''}`}>
+                <div className="list__item-col list__item-col--big list__item-col--name">
+                    <img
+                        src={customer.profileImageSrc}
+                        alt={`${customer.firstName} ${customer.lastName}`}
+                    />
+                    {customer.firstName} {customer.lastName}
+                </div>
+                <div className="list__item-col">{customer.title}</div>
+                <div className="list__item-col">{customer.eMail}</div>
+                <div className="list__item-col">{customer.phoneNumber}</div>
+            </div>
+        );
     }
-  }
-  
-  export default CustomerListItem;
+}
+
+export default CustomerListItem;
