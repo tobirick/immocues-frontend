@@ -1,23 +1,34 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React from "react";
+import { connect } from "react-redux";
+import SubHeader from "../components/Layout/SubHeader";
 
 const mapState = (state, ownProps) => {
-    const objectId = ownProps.match.params.id;
-    let object = {};
-  
-    if (objectId && state.objects.length > 0) {
-        object = state.objects.filter(object => object.id === objectId)[0];
-    }
-  
-    return {
-        object
-    }
+  const objectId = ownProps.match.params.id;
+  let object = {};
+
+  if (objectId && state.objects.length > 0) {
+    object = state.objects.filter(object => object.id === objectId)[0];
   }
 
-const ObjectPage = ({object}) => {
-    return (
-        <h1>{object.title}</h1>
-    );
-}
+  return {
+    object
+  };
+};
+
+const ObjectPage = ({ object }) => {
+  return (
+    <div className="content-wrapper">
+      <SubHeader
+        title={object.title}
+        buttonText="Go back"
+        buttonLinkTo="/objects"
+        buttonStyle="border"
+      />
+      <div className="content">
+        
+      </div>
+    </div>
+  );
+};
 
 export default connect(mapState)(ObjectPage);
