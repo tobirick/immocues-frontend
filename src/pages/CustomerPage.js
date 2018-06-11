@@ -1,6 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import SubHeader from "../components/Layout/SubHeader";
+import CustomerPageLeftSidebar from "../components/CustomerPage/CustomerPageSidebar/CustomerPageLeftSidebar";
+import CustomerPageRightSidebar from "../components/CustomerPage/CustomerPageSidebar/CustomerPageRightSidebar";
 
 const mapState = (state, ownProps) => {
   const customerId = ownProps.match.params.id;
@@ -27,7 +29,21 @@ const CustomerPage = ({ customer }) => {
         buttonStyle="border"
       />
       <div className="content">
-        
+        <div className="row">
+          <div className="customer-page__left-sidebar col-3">
+            <div className="content__box">
+              <CustomerPageLeftSidebar customer={customer} />
+            </div>
+          </div>
+
+          <div className="customer-page__content col-6">Content</div>
+
+          <div className="customer-page__right-sidebar col-3">
+            <div className="content__box">
+              <CustomerPageRightSidebar />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

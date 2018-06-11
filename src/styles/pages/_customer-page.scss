@@ -1,0 +1,13 @@
+.customer-page {
+
+    &__left-sidebar, &__right-sidebar {
+        padding: 0;
+        top: 0;
+        position: sticky;
+        min-height: calc(100vh - 12rem);
+
+        & .content__box {
+            height: 100%;
+        }
+    }
+}

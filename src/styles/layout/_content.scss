@@ -1,3 +1,9 @@
 .content {
-    padding-top: 6rem;
+    background-color: #f0f0f0;
+    min-height: calc(100vh - 12rem);
+
+    &__box {
+        background-color: #fff;
+        @include box-shadow();
+    }
 }

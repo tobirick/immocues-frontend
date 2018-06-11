@@ -1,7 +1,11 @@
 .main-header {
   display: flex;
+  position: sticky;
+  top: 0;
+  width: 100%;
   justify-content: space-between;
   height: 6rem;
+  background-color: #fff;
 
   &__logo {
     background-color: #222325;

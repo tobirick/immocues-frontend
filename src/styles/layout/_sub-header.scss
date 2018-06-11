@@ -3,8 +3,10 @@
   justify-content: space-between;
   align-items: center;
   height: 6rem;
+  top: 6rem;
   background-color: #fff;
-  position: fixed;
+  position: sticky;
+  z-index: 9999;
   width: 100%;
   padding-right: 2rem;
   @include box-shadow();
@@ -51,6 +53,7 @@
   left: 1rem;
   opacity: 0;
   visibility: hidden;
+  z-index: 9999;
   @include transition(.2s ease-in-out all);
 
   &::before {
