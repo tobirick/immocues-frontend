@@ -9,6 +9,8 @@
         display: flex;
         background-color: #e4e4e4;
         &-item {
+            display: flex;
+            align-items: center;
             flex: 1;
             padding: 1rem;
             border: 1px solid #ddd;
@@ -18,7 +20,7 @@
             }
             &--big {
                 flex: 2;
-                text-align: center;
+                justify-content: center;
             }
         }
     }
@@ -28,11 +30,9 @@
         color: #8a8a8a;
         font-size: 1.5rem;
         @include transition(.2s ease-in all);
-
         &.selected {
             background-color: $primary-color;
             color: #fff;
-
             & .list__item-col--big {
                 color: #fff;
             }
