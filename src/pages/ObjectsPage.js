@@ -1,7 +1,10 @@
 import React from 'react';
+import ObjectList from '../components/ObjectList/ObjectList';
 
 const ObjectsPage = () => (
-   <h1>Objects Page</h1>
+   <div>
+       <ObjectList />
+    </div>
 );
 
 export default ObjectsPage;

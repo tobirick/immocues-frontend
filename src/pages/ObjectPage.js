@@ -1,7 +1,23 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-const ObjectPage = () => (
-   <h1>Object Page</h1>
-);
+const mapState = (state, ownProps) => {
+    const objectId = ownProps.match.params.id;
+    let object = {};
+  
+    if (objectId && state.objects.length > 0) {
+        object = state.objects.filter(object => object.id === objectId)[0];
+    }
+  
+    return {
+        object
+    }
+  }
 
-export default ObjectPage;
+const ObjectPage = ({object}) => {
+    return (
+        <h1>{object.title}</h1>
+    );
+}
+
+export default connect(mapState)(ObjectPage);

@@ -1,7 +1,10 @@
 import React from 'react';
+import CustomerList from '../components/CustomerList/CustomerList';
 
 const CustomerPages = () => (
-   <h1>Customers Page</h1>
+   <div>
+       <CustomerList />
+    </div>
 );
 
 export default CustomerPages;

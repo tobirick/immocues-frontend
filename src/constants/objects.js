@@ -1,0 +1,3 @@
+export const CREATE_OBJECT = "CREATE_OBJECT";
+export const UPDATE_OBJECT = "UPDATE_OBJECT";
+export const DELETE_OBJECT = "DELETE_OBJECT";
