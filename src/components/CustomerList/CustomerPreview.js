@@ -29,7 +29,7 @@ const CustomerPreview = ({ customer, setCustomer }) => {
                         {customer.firstName} {customer.lastName}
                     </span>
                     <span className="customer__preview-header-title">
-                        {customer.title}
+                        {customer.title ? customer.title : '---'}
                     </span>
                 </div>
             </div>
@@ -44,14 +44,14 @@ const CustomerPreview = ({ customer, setCustomer }) => {
                 <div className="customer__basic-info-item">
                     <div className="customer__basic-info-item-label">Title</div>
                     <div className="customer__basic-info-item-text">
-                        {customer.title}
+                        {customer.title ? customer.title : '---'}
                     </div>
                 </div>
 
                 <div className="customer__basic-info-item">
                     <div className="customer__basic-info-item-label">Company</div>
                     <div className="customer__basic-info-item-text">
-                        {customer.company}
+                        {customer.company ? customer.company : '---'}
                     </div>
                 </div>
 
@@ -60,7 +60,7 @@ const CustomerPreview = ({ customer, setCustomer }) => {
                         E-Mail
                     </div>
                     <div className="customer__basic-info-item-text">
-                        {customer.eMail}
+                        {customer.eMail ? customer.eMail : '---'}
                     </div>
                 </div>
 
@@ -69,7 +69,7 @@ const CustomerPreview = ({ customer, setCustomer }) => {
                         Phone Number
                     </div>
                     <div className="customer__basic-info-item-text">
-                        {customer.phoneNumber}
+                        {customer.phoneNumber ? customer.phoneNumber : '---'}
                     </div>
                 </div>
 
@@ -78,7 +78,7 @@ const CustomerPreview = ({ customer, setCustomer }) => {
                         Mobile Phone Number
                     </div>
                     <div className="customer__basic-info-item-text">
-                        {customer.mobilePhoneNumber}
+                        {customer.mobilePhoneNumber ? customer.mobilePhoneNumber : '---'}
                     </div>
                 </div>
 
@@ -87,7 +87,7 @@ const CustomerPreview = ({ customer, setCustomer }) => {
                         Website
                     </div>
                     <div className="customer__basic-info-item-text">
-                        {customer.websiteUrl}
+                        {customer.websiteUrl ? customer.websiteUrl : '---'}
                     </div>
                 </div>
 

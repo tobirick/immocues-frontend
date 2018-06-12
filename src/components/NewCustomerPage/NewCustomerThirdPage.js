@@ -21,11 +21,23 @@ const NewCustomerThirdPage = ({ prevStep, handleSubmit }) => {
             placeholder="Description/Notes"
           />
         </div>
+        <div className="form-row">
+          <label htmlFor="" className="form-label">
+            Profile Image
+          </label>
+        </div>
+        <div className="form-row">
+          <label htmlFor="" className="form-label">
+            Additional Files
+          </label>
+        </div>
         <div className="form-row form-row--right form-row--button">
           <button type="button" onClick={prevStep} className="button-primary">
             Previous
           </button>
-          <button type="submit" className="button-primary">Create Customer</button>
+          <button type="submit" className="button-primary">
+            Create Customer
+          </button>
         </div>
       </form>
     </div>

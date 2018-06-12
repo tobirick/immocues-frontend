@@ -61,6 +61,9 @@ const NewCustomerSecondPage = ({ prevStep, handleSubmit }) => {
             />
           </div>
         </div>
+        <div className="form-row">
+          <label htmlFor="" className="form-label">Location</label>
+        </div>
         <div className="form-row form-row--right form-row--button">
           <button type="button" onClick={prevStep} className="button-primary">
             Previous

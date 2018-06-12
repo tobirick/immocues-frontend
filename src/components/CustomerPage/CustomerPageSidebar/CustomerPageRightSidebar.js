@@ -49,15 +49,15 @@ class CustomerPageRightSidebar extends Component {
               !nextEventId ? "disabled" : ""
             }`}
           >
-          {nextEventId ? (
-            <Link to={`/customers/${nextEventId}`}>
-              Next <i className="fal fa-angle-right" />
-            </Link>
-          ) : (
-            <Link to={`/customers/${customer.id}`}>
-              Next <i className="fal fa-angle-right" />
-            </Link>
-          )}
+            {nextEventId ? (
+              <Link to={`/customers/${nextEventId}`}>
+                Next <i className="fal fa-angle-right" />
+              </Link>
+            ) : (
+              <Link to={`/customers/${customer.id}`}>
+                Next <i className="fal fa-angle-right" />
+              </Link>
+            )}
           </div>
         </div>
         <div className="customer__info-tabs">
@@ -83,7 +83,7 @@ class CustomerPageRightSidebar extends Component {
               onClick={this.toggleTab("objectTabOpen")}
               className="customer__info-tab-item-heading"
             >
-              <h4>Objects</h4>
+              <h4>Related Objects</h4>
               <span />
             </div>
             <div className="customer__info-tab-item-content">Content</div>
