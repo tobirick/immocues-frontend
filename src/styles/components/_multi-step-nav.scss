@@ -1,0 +1,24 @@
+.multi-step {
+
+    &__nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 4rem 0;
+    }
+
+    &__nav-item {
+        background-color: #fff;
+        cursor: pointer;
+        margin: 0 2rem;
+        padding: 1rem;
+        border-radius: 3px;
+        @include transition(.2s ease-in all);
+
+        &:hover, &.active {
+            background-color: $primary-color;
+            color: #fff;
+            @include box-shadow();
+        }
+    }
+}
