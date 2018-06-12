@@ -40,6 +40,13 @@ const CustomerPageLeftSidebar = ({ customer }) => {
                 </div>
 
                 <div className="customer__basic-info-item">
+                    <div className="customer__basic-info-item-label">Company</div>
+                    <div className="customer__basic-info-item-text">
+                        {customer.company}
+                    </div>
+                </div>
+
+                <div className="customer__basic-info-item">
                     <div className="customer__basic-info-item-label">E-Mail</div>
                     <div className="customer__basic-info-item-text">
                         {customer.eMail}
@@ -57,6 +64,13 @@ const CustomerPageLeftSidebar = ({ customer }) => {
                     <div className="customer__basic-info-item-label">Mobile Phone Number</div>
                     <div className="customer__basic-info-item-text">
                         {customer.mobilePhoneNumber}
+                    </div>
+                </div>
+
+                <div className="customer__basic-info-item">
+                    <div className="customer__basic-info-item-label">Website</div>
+                    <div className="customer__basic-info-item-text">
+                        {customer.websiteUrl}
                     </div>
                 </div>
 

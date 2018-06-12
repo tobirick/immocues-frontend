@@ -1,9 +1,10 @@
 import React from "react";
 
-const TextInput = ({ input, type, placeholder, meta: { touched, error } }) => {
+const TextInput = ({ input, type, placeholder, id, meta: { touched, error } }) => {
   return (
     <div className="form-field">
       <input
+        id={id}
         className={`form-input ${
           touched && !!error ? "form-input__error" : ""
         }`}
@@ -12,7 +13,7 @@ const TextInput = ({ input, type, placeholder, meta: { touched, error } }) => {
         type={type}
       />
       {touched &&
-        error && <label className="form-input__error-message">{error}</label>}
+        error && <div className="form-input__error-message">{error}</div>}
     </div>
   );
 };

@@ -8,15 +8,18 @@ const customersReducerDefaultState = [
             lastName: 'Rick',
             profileImageSrc: '/img/default-profile.png',
             title: 'Testtitle',
+            company: 'Testcompany',
             eMail: 'tobirickmann@gmail.com',
             phoneNumber: '08251/52264',
             mobilePhoneNumber: '01637205965',
+            websiteUrl: 'testurl.de',
             addressCity: 'Aichach',
             addressZIPCode: '86551',
             addressCountry: 'Germany',
             addressState: 'Bavaria',
             addressStreet: 'Erlenweg',
-            addressStreetNr: '1a'
+            addressStreetNr: '1a',
+            notes: ''
       },
       {
         id: '2',
@@ -24,15 +27,18 @@ const customersReducerDefaultState = [
         lastName: 'Rick2',
         profileImageSrc: '/img/default-profile.png',
         title: 'Testtitle',
+        company: 'Testcompany',
         eMail: 'tobirickmann@gmail.com',
         phoneNumber: '08251/52264',
         mobilePhoneNumber: '01637205965',
+        websiteUrl: 'testurl.de',
         addressCity: 'Aichach',
         addressZIPCode: '86551',
         addressCountry: 'Germany',
         addressState: 'Bavaria',
         addressStreet: 'Erlenweg',
-        addressStreetNr: '1a'
+        addressStreetNr: '1a',
+        notes: ''
   }
 ];
 

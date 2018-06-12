@@ -1,9 +1,10 @@
 import React from "react";
 
-const TextArea = ({ input, rows, placeholder, meta: { touched, error } }) => {
+const TextArea = ({ input, rows, id, placeholder, meta: { touched, error } }) => {
   return (
     <div className="form-field">
       <textarea
+      id={id}
         className={`form-input ${
           touched && !!error ? "form-input__error" : ""
         }`}
@@ -12,7 +13,7 @@ const TextArea = ({ input, rows, placeholder, meta: { touched, error } }) => {
         rows={rows}
       />
       {touched &&
-        error && <label className="form-input__error-message">{error}</label>}
+        error && <div className="form-input__error-message">{error}</div>}
     </div>
   );
 };

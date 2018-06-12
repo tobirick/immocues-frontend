@@ -12,6 +12,7 @@ import cuid from "cuid";
 import { createCustomer } from "../actions/customers";
 import SubHeader from "../components/Layout/SubHeader";
 import TextInput from "../helpers/form/TextInput";
+import TextArea from "../helpers/form/TextArea";
 
 const isValidEmail = createValidator(
   message => value => {
@@ -25,17 +26,11 @@ const isValidEmail = createValidator(
 const validate = combineValidators({
   firstName: isRequired({ message: "First Name is required" }),
   lastName: isRequired({ message: "Last Name is required" }),
-  title: isRequired({ message: "Title is required" }),
-  eMail: composeValidators(
-    isRequired({ message: "E-Mail is required" }),
-    isValidEmail
-  )(),
+  eMail: composeValidators(isValidEmail)(),
   phoneNumber: composeValidators(
-    isRequired({ message: "Phone Number is required" }),
     isNumeric({ message: "Phone Number needs to be a number" })
   )(),
   mobilePhoneNumber: composeValidators(
-    isRequired({ message: "Mobile Phone Number is required" }),
     isNumeric({ message: "Mobile Phone Number needs to be a number" })
   )()
 });
@@ -48,8 +43,8 @@ class NewCustomerPage extends Component {
   onFormSubmit = values => {
     values.profileImageSrc = "/img/default-profile.png";
     values.id = cuid();
-	this.props.createCustomer(values);
-	this.props.history.push('/customers');
+    this.props.createCustomer(values);
+    this.props.history.push("/customers");
   };
 
   render() {
@@ -64,43 +59,126 @@ class NewCustomerPage extends Component {
         <div className="content pt-3">
           <div className="content__box content__box--main">
             <form onSubmit={this.props.handleSubmit(this.onFormSubmit)}>
-              <Field
-                name="firstName"
-                type="text"
-                component={TextInput}
-                placeholder="First Name"
-              />
-              <Field
-                name="lastName"
-                type="text"
-                component={TextInput}
-                placeholder="Last Name"
-              />
-              <Field
-                name="title"
-                type="text"
-                component={TextInput}
-                placeholder="Title"
-              />
-              <Field
-                name="eMail"
-                type="text"
-                component={TextInput}
-                placeholder="E-Mail"
-              />
-              <Field
-                name="phoneNumber"
-                type="text"
-                component={TextInput}
-                placeholder="Phone Number"
-              />
-              <Field
-                name="mobilePhoneNumber"
-                type="text"
-                component={TextInput}
-                placeholder="Mobile Phone Number"
-              />
-              <button className="button-primary">Create</button>
+              <div className="form-row">
+                <div className="col-12 col-md-6">
+                  <label className="form-label" htmlFor="firstName">
+                    First Name
+                  </label>
+                  <Field
+                    id="firstName"
+                    name="firstName"
+                    type="text"
+                    component={TextInput}
+                    placeholder="First Name"
+                  />
+                </div>
+                <div className="col-12 col-md-6">
+                  <label className="form-label" htmlFor="lastName">
+                    Last Name
+                  </label>
+                  <Field
+                    id="lastName"
+                    name="lastName"
+                    type="text"
+                    component={TextInput}
+                    placeholder="First Name"
+                  />
+                </div>
+              </div>
+              <div className="form-row">
+                <div className="col-12 col-md-6">
+                  <label className="form-label" htmlFor="title">
+                    Title
+                  </label>
+                  <Field
+                    id="title"
+                    name="title"
+                    type="text"
+                    component={TextInput}
+                    placeholder="Title"
+                  />
+                </div>
+
+                <div className="col-12 col-md-6">
+                  <label className="form-label" htmlFor="company">
+                    Company
+                  </label>
+                  <Field
+                    id="company"
+                    name="company"
+                    type="text"
+                    component={TextInput}
+                    placeholder="Company"
+                  />
+                </div>
+              </div>
+              <div className="form-row">
+                <div className="col-12 col-md-6">
+                  <label className="form-label" htmlFor="email">
+                    E-Mail
+                  </label>
+                  <Field
+                    id="email"
+                    name="eMail"
+                    type="text"
+                    component={TextInput}
+                    placeholder="E-Mail"
+                  />
+                </div>
+                <div className="col-12 col-md-6">
+                  <label className="form-label" htmlFor="websiteurl">
+                    Website URL
+                  </label>
+                  <Field
+                    id="websiteurl"
+                    name="websiteUrl"
+                    type="text"
+                    component={TextInput}
+                    placeholder="Website URL"
+                  />
+                </div>
+              </div>
+              <div className="form-row">
+                <div className="col-12 col-md-6">
+                  <label className="form-label" htmlFor="phonenumber">
+                    Phone Number
+                  </label>
+                  <Field
+                    id="phonenumber"
+                    name="phoneNumber"
+                    type="text"
+                    component={TextInput}
+                    placeholder="Phone Number"
+                  />
+                </div>
+                <div className="col-12 col-md-6">
+                  <label className="form-label" htmlFor="mobilephonenumber">
+                    Mobile Phone Number
+                  </label>
+                  <Field
+                    id="mobilephonenumber"
+                    name="mobilePhoneNumber"
+                    type="text"
+                    component={TextInput}
+                    placeholder="Mobile Phone Number"
+                  />
+                </div>
+              </div>
+              <div className="form-row">
+                <label className="form-label" htmlFor="notes">
+                  Description/Notes
+                </label>
+                <Field
+                  id="notes"
+                  name="notes"
+                  component={TextArea}
+                  rows="5"
+                  placeholder="Description/Notes"
+                />
+              </div>
+              <div className="form-row form-row--right form-row--button">
+                <button className="button-primary">Create Customer</button>
+              </div>
             </form>
           </div>
         </div>
