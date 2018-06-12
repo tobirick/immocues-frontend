@@ -10,7 +10,63 @@
             min-height: 100%;
         }
     }
-    &__info-tabs {}
+
+    &__nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1.5rem 0;
+        @include box-shadow(sm);
+
+        &-button {
+            background-color: $primary-color;
+            border-radius: 3px;
+            padding: 0.2rem 1rem;
+            margin: 0 1rem;
+            font-size: 1.4rem;
+
+            & a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                color: #fff;
+                text-decoration: none;
+            }
+
+            &.disabled {
+                background-color: #ddd;
+
+                & a {
+                    cursor: default;
+                }
+            }
+
+            &--prev {
+                & svg {
+                    margin-right: 0.5rem;
+                }
+            }
+
+            &--next {
+
+                & svg {
+                    margin-left: 0.5rem;
+                }
+            }
+
+            & svg {
+                font-size: 3rem;
+            }
+        }
+
+        &-number {
+            opacity: .8;
+            font-size: 1.2rem;
+        }
+    }
+
     &__info-tab-item {
         padding: 3rem 2rem;
         border-top: 1px solid #ddd;

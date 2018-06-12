@@ -5,5 +5,11 @@
     &__box {
         background-color: #fff;
         @include box-shadow();
+
+        &--main {
+            width: 95%;
+            margin: 0 auto;
+            padding: 2rem;
+        }
     }
 }

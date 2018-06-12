@@ -1,4 +1,4 @@
-import { createReducer } from '../utils/reducerUtil';
+import { createReducer } from '../helpers/utils/reducerUtil';
 import { CREATE_OBJECT, DELETE_OBJECT, UPDATE_OBJECT } from '../constants/objects';
 
 const objectsReducerDefaultState = [

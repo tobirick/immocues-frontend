@@ -7,19 +7,35 @@ import CustomerPageRightSidebar from "../components/CustomerPage/CustomerPageSid
 const mapState = (state, ownProps) => {
   const customerId = ownProps.match.params.id;
   let customer = {};
+  let index = 0;
 
   if (customerId && state.customers.length > 0) {
     customer = state.customers.filter(
       customer => customer.id === customerId
     )[0];
+    index = state.customers.findIndex(customer => customer.id === customerId);
   }
 
   return {
-    customer
+    customer,
+    numberOfEvents: state.customers.length,
+    currentEventNumber: index + 1,
+    prevEventId: state.customers[index - 1]
+      ? state.customers[index - 1].id
+      : false,
+    nextEventId: state.customers[index + 1]
+      ? state.customers[index + 1].id
+      : false
   };
 };
 
-const CustomerPage = ({ customer }) => {
+const CustomerPage = ({
+  customer,
+  numberOfEvents,
+  currentEventNumber,
+  prevEventId,
+  nextEventId
+}) => {
   return (
     <div className="content-wrapper">
       <SubHeader
@@ -40,7 +56,13 @@ const CustomerPage = ({ customer }) => {
 
           <div className="customer__right-sidebar col-3">
             <div className="content__box">
-              <CustomerPageRightSidebar />
+              <CustomerPageRightSidebar
+                customer={customer}
+                numberOfEvents={numberOfEvents}
+                currentEventNumber={currentEventNumber}
+                prevEventId={prevEventId}
+                nextEventId={nextEventId}
+              />
             </div>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import { createReducer } from '../utils/reducerUtil';
+import { createReducer } from '../helpers/utils/reducerUtil';
 import { CREATE_CUSTOMER, DELETE_CUSTOMER, UPDATE_CUSTOMER } from '../constants/customers';
 
 const customersReducerDefaultState = [
@@ -20,8 +20,8 @@ const customersReducerDefaultState = [
       },
       {
         id: '2',
-        firstName: 'Nik',
-        lastName: 'Rick',
+        firstName: 'Tobi2',
+        lastName: 'Rick2',
         profileImageSrc: '/img/default-profile.png',
         title: 'Testtitle',
         eMail: 'tobirickmann@gmail.com',
