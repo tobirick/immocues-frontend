@@ -28,7 +28,9 @@ class NewCustomerPage extends Component {
   };
 
   nextStep = () => {
-    this.setState({ currentStep: this.state.currentStep + 1 });
+    if(this.props.valid) {
+        this.setState({ currentStep: this.state.currentStep + 1 });
+    }
   };
 
   prevStep = () => {
