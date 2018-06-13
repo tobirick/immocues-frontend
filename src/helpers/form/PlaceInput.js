@@ -48,7 +48,7 @@ export class PlaceInput extends Component {
                     id
                   })}
                 />
-                <div className="autocomplete">
+                <div className={`autocomplete ${suggestions.length === 0 ? 'no-results' : ''}`}>
                   {suggestions.map(suggestion => {
                     const className = suggestion.active
                       ? "autocomplete__item--active"
