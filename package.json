@@ -5,7 +5,10 @@
    "main": "app.js",
    "scripts": {
       "start:dev": "webpack-dev-server",
-      "build:dev": "webpack"
+      "build:dev": "webpack",
+      "build:prod": "webpack -p --env production",
+      "start": "node server/server.js",
+      "heroku-postbuild": "npm run build:prod"
    },
    "author": "Tobias Rickmann",
    "license": "ISC",
