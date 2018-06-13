@@ -9,6 +9,10 @@ export class PlaceInput extends Component {
 
   handleScriptLoaded = () => this.setState({ scriptLoaded: true });
 
+  handleError = (status, clearSuggestions) => {
+    // Do something
+  };
+
   render() {
     const {
       input,
@@ -29,6 +33,7 @@ export class PlaceInput extends Component {
             value={input.value}
             onChange={input.onChange}
             onSelect={onSelect}
+            onError={this.handleError}
             searchOptions={options}
           >
             {({ getInputProps, suggestions, getSuggestionItemProps }) => (
