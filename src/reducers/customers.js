@@ -14,11 +14,11 @@ const customersReducerDefaultState = [
             mobilePhoneNumber: '01637205965',
             websiteUrl: 'testurl.de',
             addressCity: 'Aichach',
-            addressZIPCode: '86551',
-            addressCountry: 'Germany',
-            addressState: 'Bavaria',
-            addressStreet: 'Erlenweg',
-            addressStreetNr: '1a',
+            addressStreet: 'Erlenweg 1',
+            addressLatLng: {
+                  lat: 40.7484405,
+                  lng: -73.98566440000002
+            },
             notes: ''
       },
       {
@@ -33,11 +33,11 @@ const customersReducerDefaultState = [
         mobilePhoneNumber: '01637205965',
         websiteUrl: 'testurl.de',
         addressCity: 'Aichach',
-        addressZIPCode: '86551',
-        addressCountry: 'Germany',
-        addressState: 'Bavaria',
-        addressStreet: 'Erlenweg',
-        addressStreetNr: '1a',
+        addressStreet: 'Erlenweg 1',
+        addressLatLng: {
+              lat: 40.7484405,
+              lng: -73.98566440000002
+        },
         notes: ''
   }
 ];

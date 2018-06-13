@@ -1,0 +1,28 @@
+.autocomplete {
+    background-color: #fff;
+    border-radius: 3px;
+    position: absolute;
+    width: 100%;
+    z-index: 999;
+    @include box-shadow();
+
+    &__wrapper {
+        position: relative;
+    }
+
+    &__item, &__item--active {
+        padding: 1rem;
+        cursor: pointer;
+        border-bottom: 1px solid #ddd;
+        @include transition(.2s ease-in all);
+
+        &:hover, &--active {
+            background-color: $primary-color;
+            color: #fff;
+        }
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+}
