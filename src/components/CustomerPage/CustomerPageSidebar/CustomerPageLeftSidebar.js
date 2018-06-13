@@ -1,4 +1,5 @@
 import React from "react";
+import MapComponent from "../../../helpers/maps/MapComponent";
 
 const CustomerPageLeftSidebar = ({ customer }) => {
   return (
@@ -78,8 +79,13 @@ const CustomerPageLeftSidebar = ({ customer }) => {
 
         <div className="customer__basic-info-item">
           <div className="customer__basic-info-item-label">Address</div>
+          <MapComponent
+            lat={customer.addressLatLng.lat}
+            lng={customer.addressLatLng.lng}
+          />
           <div className="customer__basic-info-item-text">
-            Google Maps Widget
+            <strong>{customer.addressStreet}</strong>
+            <p>{customer.addressCity}</p>
           </div>
         </div>
       </div>
