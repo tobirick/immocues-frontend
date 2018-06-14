@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import MapComponent from "../../helpers/maps/MapComponent";
 
@@ -86,13 +85,17 @@ const CustomerPreview = ({ customer, setCustomer }) => {
 
         <div className="customer__basic-info-item">
           <div className="customer__basic-info-item-label">Address</div>
-          <MapComponent
-            lat={customer.addressLatLng.lat}
-            lng={customer.addressLatLng.lng}
-          />
+          {customer.addressLatLng && (
+            <MapComponent
+              lat={customer.addressLatLng.lat}
+              lng={customer.addressLatLng.lng}
+            />
+          )}
           <div className="customer__basic-info-item-text">
-            <strong>{customer.addressStreet}</strong>
-            <p>{customer.addressCity}</p>
+            <strong>
+              {customer.addressStreet ? customer.addressStreet : "---"}
+            </strong>
+            <p>{customer.addressCity ? customer.addressCity : "---"}</p>
           </div>
         </div>
       </div>

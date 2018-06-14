@@ -26,6 +26,7 @@
     height: 100%;
     align-content: center;
     justify-content: center;
+    position: relative;
     cursor: pointer;
     @include transition(.2s ease-in all);
 

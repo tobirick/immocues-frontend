@@ -6,6 +6,11 @@
     z-index: 999;
     @include box-shadow();
 
+    &.no-results {
+        opacity: 0;
+        visibility: hidden;
+    }
+
     &__wrapper {
         position: relative;
     }
