@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { reduxForm } from "redux-form";
 import cuid from "cuid";
-import { createCustomer } from "../actions/customers";
+import { startCreateCustomer } from "../actions/customers";
 import SubHeader from "../components/Layout/SubHeader";
 import NewCustomerFirstPage from "../components/NewCustomerPage/NewCustomerFirstPage";
 import NewCustomerSecondPage from "../components/NewCustomerPage/NewCustomerSecondPage";
@@ -12,9 +12,9 @@ import NewCustomerThirdPage from "../components/NewCustomerPage/NewCustomerThird
 
 import validate from "../validators/newCustomerForm";
 
-const actions = {
-  createCustomer
-};
+const mapActions = dispatch => ({
+  startCreateCustomer: customer => dispatch(startCreateCustomer(customer))
+});
 
 class NewCustomerPage extends Component {
   state = {
@@ -24,9 +24,10 @@ class NewCustomerPage extends Component {
   onFormSubmit = values => {
     values.profileImageSrc = "/img/default-profile.png";
     values.id = cuid();
-    this.props.createCustomer(values);
-    this.props.reset();
-    this.props.history.push("/customers");
+    this.props.startCreateCustomer(values).then(() => {
+      this.props.reset();
+      this.props.history.push("/customers");
+    });
   };
 
   nextStep = () => {
@@ -109,12 +110,12 @@ class NewCustomerPage extends Component {
 }
 
 NewCustomerPage.propTypes = {
-  createCustomer: PropTypes.func.isRequired
+  startCreateCustomer: PropTypes.func.isRequired
 };
 
 export default connect(
   null,
-  actions
+  mapActions
 )(
   reduxForm({
     form: "newCustomerForm",

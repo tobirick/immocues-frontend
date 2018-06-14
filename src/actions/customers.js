@@ -1,28 +1,58 @@
-import { CREATE_CUSTOMER, DELETE_CUSTOMER, UPDATE_CUSTOMER } from '../constants/customers';
+import {
+  CREATE_CUSTOMER,
+  DELETE_CUSTOMER,
+  UPDATE_CUSTOMER,
+  FETCH_ALL_CUSTOMERS
+} from "../constants/customers";
+import api from "../api/api";
 
-export const createCustomer = (customer) => {
-	return {
-		type: CREATE_CUSTOMER,
-		payload: {
-			customer
-		}
-	}
-}
+const createCustomer = customer => {
+  return {
+    type: CREATE_CUSTOMER,
+    payload: {
+      customer
+    }
+  };
+};
 
-export const updateCustomer = (customer) => {
-	return {
-		type: UPDATE_CUSTOMER,
-		payload: {
-			customer
-		}
-	}
-}
+export const startCreateCustomer = customerData => {
+  return dispatch => {
+    return api.customers.create(customerData).then(customer => {
+      dispatch(createCustomer(customer));
+    });
+  };
+};
 
-export const deleteCustomer = (customerId) => {
-	return {
-		type: DELETE_CUSTOMER,
-		payload: {
-			customerId
-		}
-	}
-}
+export const updateCustomer = customer => {
+  return {
+    type: UPDATE_CUSTOMER,
+    payload: {
+      customer
+    }
+  };
+};
+
+export const deleteCustomer = customerId => {
+  return {
+    type: DELETE_CUSTOMER,
+    payload: {
+      customerId
+    }
+  };
+};
+
+const fetchAllCustomers = customers => {
+  return { type: FETCH_ALL_CUSTOMERS, payload: { customers } };
+};
+
+export const startFetchAllCustomers = () => {
+  return dispatch => {
+    return api.customers.fetchAll().then(customersData => {
+      const customers = [];
+      customersData.forEach(customer => {
+        customers.push(customer);
+      });
+      dispatch(fetchCustomers(customers));
+    });
+  };
+};

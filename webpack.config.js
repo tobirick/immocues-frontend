@@ -46,8 +46,15 @@ module.exports = env => {
         }
       ]
     },
-    plugins: [CSSExtract],
-    devtool: isProduction ? 'source-map' : 'inline-source-map',
+    plugins: [
+      CSSExtract,
+      new webpack.DefinePlugin({
+        "process.env.API_URL": JSON.stringify(
+          process.env.API_URL
+        )
+      })
+    ],
+    devtool: isProduction ? "source-map" : "inline-source-map",
     devServer: {
       contentBase: path.join(__dirname, "public"),
       historyApiFallback: true,
