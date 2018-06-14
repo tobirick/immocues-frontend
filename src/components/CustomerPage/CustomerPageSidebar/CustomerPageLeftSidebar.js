@@ -1,8 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import MapComponent from "../../../helpers/maps/MapComponent";
-import React from 'react';
-import MapComponent from '../../../helpers/maps/MapComponent';
 
 const CustomerPageLeftSidebar = ({ customer }) => {
     return (
