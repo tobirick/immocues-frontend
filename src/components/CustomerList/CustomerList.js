@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import CustomerListItem from './CustomerListItem';
-
 
 class CustomerList extends Component {
     render() {
@@ -20,13 +20,19 @@ class CustomerList extends Component {
                                 key={customer.id}
                                 customer={customer}
                                 setCustomer={setCustomer}
-                                isSelected={selectedCustomer && selectedCustomer.id === customer.id}
+                                isSelected={Object.keys(selectedCustomer).length > 0 && selectedCustomer.id === customer.id}
                             />
                         ))}
                 </div>
             </div>
         );
     }
+}
+
+CustomerList.propTypes = {
+    customers: PropTypes.array.isRequired,
+    setCustomer: PropTypes.func.isRequired,
+    selectedCustomer: PropTypes.object.isRequired
 }
 
 export default CustomerList;

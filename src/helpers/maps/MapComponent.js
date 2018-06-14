@@ -1,9 +1,10 @@
 import React from "react";
+import PropTypes from "prop-types";
 import GoogleMapReact from "google-map-react";
 
-const Marker = () => <i className="fas fa-map-marker-alt map__marker"></i>;
+const Marker = () => <i className="fas fa-map-marker-alt map__marker" />;
 
-const EventDetailedMap = ({ lat, lng }) => {
+const MapComponent = ({ lat, lng }) => {
   const center = [lat, lng];
   const zoom = 15;
   return (
@@ -19,4 +20,9 @@ const EventDetailedMap = ({ lat, lng }) => {
   );
 };
 
-export default EventDetailedMap;
+MapComponent.propTypes = {
+  lat: PropTypes.number.isRequired,
+  lng: PropTypes.number.isRequired
+};
+
+export default MapComponent;

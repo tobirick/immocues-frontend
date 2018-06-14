@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 class CustomerPageRightSidebar extends Component {
@@ -106,5 +107,13 @@ class CustomerPageRightSidebar extends Component {
     );
   }
 }
+
+CustomerPageRightSidebar.propTypes = {
+  customer: PropTypes.object.isRequired,
+  numberOfEvents: PropTypes.number.isRequired,
+  currentEventNumber: PropTypes.number.isRequired,
+  prevEventId: PropTypes.any.isRequired,
+  nextEventId: PropTypes.any.isRequired
+};
 
 export default CustomerPageRightSidebar;

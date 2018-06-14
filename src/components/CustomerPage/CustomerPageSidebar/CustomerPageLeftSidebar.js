@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import MapComponent from "../../../helpers/maps/MapComponent";
 
 const CustomerPageLeftSidebar = ({ customer }) => {
@@ -91,6 +92,10 @@ const CustomerPageLeftSidebar = ({ customer }) => {
       </div>
     </div>
   );
+};
+
+CustomerPageLeftSidebar.propTypes = {
+  customer: PropTypes.object.isRequired
 };
 
 export default CustomerPageLeftSidebar;

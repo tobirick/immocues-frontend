@@ -1,10 +1,6 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
+import PropTypes from "prop-types";
 import ObjectListItem from "./ObjectListItem";
-
-const mapState = state => ({
-  objects: state.objects
-});
 
 class ObjectList extends Component {
   render() {
@@ -20,4 +16,8 @@ class ObjectList extends Component {
   }
 }
 
-export default connect(mapState)(ObjectList);
+ObjectList.propTypes = {
+  objects: PropTypes.array.isRequired
+};
+
+export default ObjectList;

@@ -4,7 +4,7 @@ const TextArea = ({ input, rows, id, placeholder, meta: { touched, error } }) =>
   return (
     <div className="form-field">
       <textarea
-      id={id}
+        id={id}
         className={`form-input ${
           touched && !!error ? "form-input__error" : ""
         }`}

@@ -1,8 +1,14 @@
 import React from "react";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
 import ObjectList from "../components/ObjectList/ObjectList";
 import SubHeader from "../components/Layout/SubHeader";
 
-const ObjectsPage = () => (
+const mapState = state => ({
+  objects: state.objects
+});
+
+const ObjectsPage = ({ objects }) => (
   <div className="content-wrapper">
     <SubHeader
       title="Objects"
@@ -10,9 +16,13 @@ const ObjectsPage = () => (
       buttonLinkTo="/objects/new"
     />
     <div className="content">
-      <ObjectList />
+      <ObjectList objects={objects} />
     </div>
   </div>
 );
 
-export default ObjectsPage;
+ObjectsPage.propTypes = {
+  objects: PropTypes.array.isRequired
+};
+
+export default connect(mapState)(ObjectsPage);

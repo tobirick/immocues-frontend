@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 class ObjectListItem extends Component {
@@ -13,5 +14,9 @@ class ObjectListItem extends Component {
     );
   }
 }
+
+ObjectListItem.propTypes = {
+  object: PropTypes.object.isRequired
+};
 
 export default ObjectListItem;

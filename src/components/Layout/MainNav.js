@@ -1,9 +1,10 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
 
-const MainNav = ({ className }) => {
+const MainNav = ({ navOpenClass }) => {
   return (
-    <div className={`main-nav ${className}`}>
+    <div className={`main-nav ${navOpenClass}`}>
       <ul>
         <li className="main-nav__item">
           <NavLink exact className="main-nav__item-link" to="/">
@@ -26,6 +27,10 @@ const MainNav = ({ className }) => {
       </ul>
     </div>
   );
+};
+
+MainNav.propTypes = {
+  navOpenClass: PropTypes.string.isRequired
 };
 
 export default MainNav;

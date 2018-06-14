@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import SubHeader from "../components/Layout/SubHeader";
 import CustomerPageLeftSidebar from "../components/CustomerPage/CustomerPageSidebar/CustomerPageLeftSidebar";
@@ -69,6 +70,14 @@ const CustomerPage = ({
       </div>
     </div>
   );
+};
+
+CustomerPage.propTypes = {
+  customer: PropTypes.object.isRequired,
+  numberOfEvents: PropTypes.number.isRequired,
+  currentEventNumber: PropTypes.number.isRequired,
+  prevEventId: PropTypes.any.isRequired,
+  nextEventId: PropTypes.any.isRequired
 };
 
 export default connect(mapState)(CustomerPage);

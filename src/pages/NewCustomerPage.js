@@ -1,5 +1,6 @@
 /* global google */
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { reduxForm } from "redux-form";
 import cuid from "cuid";
@@ -29,8 +30,8 @@ class NewCustomerPage extends Component {
   };
 
   nextStep = () => {
-    if(this.props.valid) {
-        this.setState({ currentStep: this.state.currentStep + 1 });
+    if (this.props.valid) {
+      this.setState({ currentStep: this.state.currentStep + 1 });
     }
   };
 
@@ -42,7 +43,7 @@ class NewCustomerPage extends Component {
     if (this.props.valid || !(step > this.state.currentStep)) {
       this.setState({ currentStep: step });
     } else {
-      console.log('Please fill all fields and fix the errors!');
+      console.log("Please fill all fields and fix the errors!");
     }
   };
 
@@ -59,13 +60,28 @@ class NewCustomerPage extends Component {
         />
         <div className="content pt-3">
           <div className="multi-step__nav">
-            <div onClick={this.goToStep(1)} className={`multi-step__nav-item ${currentStep === 1 ? 'active' :''}`}>
+            <div
+              onClick={this.goToStep(1)}
+              className={`multi-step__nav-item ${
+                currentStep === 1 ? "active" : ""
+              }`}
+            >
               1. Default Information
             </div>
-            <div onClick={this.goToStep(2)} className={`multi-step__nav-item ${currentStep === 2 ? 'active' :''}`}>
+            <div
+              onClick={this.goToStep(2)}
+              className={`multi-step__nav-item ${
+                currentStep === 2 ? "active" : ""
+              }`}
+            >
               2. Contact Information
             </div>
-            <div onClick={this.goToStep(3)} className={`multi-step__nav-item ${currentStep === 3 ? 'active' :''}`}>
+            <div
+              onClick={this.goToStep(3)}
+              className={`multi-step__nav-item ${
+                currentStep === 3 ? "active" : ""
+              }`}
+            >
               3. Additional Information
             </div>
           </div>
@@ -91,6 +107,10 @@ class NewCustomerPage extends Component {
     );
   }
 }
+
+NewCustomerPage.propTypes = {
+  createCustomer: PropTypes.func.isRequired
+};
 
 export default connect(
   null,

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import SubHeader from "../components/Layout/SubHeader";
 
@@ -24,11 +25,13 @@ const ObjectPage = ({ object }) => {
         buttonLinkTo="/objects"
         buttonStyle="border"
       />
-      <div className="content">
-        
-      </div>
+      <div className="content" />
     </div>
   );
+};
+
+ObjectPage.propTypes = {
+  object: PropTypes.object.isRequired
 };
 
 export default connect(mapState)(ObjectPage);

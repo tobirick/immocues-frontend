@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import MapComponent from "../../helpers/maps/MapComponent";
 
@@ -11,7 +12,7 @@ const CustomerPreview = ({ customer, setCustomer }) => {
             <i className="fas fa-arrow-right" />
           </Link>
         </div>
-        <div onClick={setCustomer(null)} className="customer__preview-button">
+        <div onClick={setCustomer({})} className="customer__preview-button">
           <i className="fal fa-times-circle" />
         </div>
       </div>
@@ -97,6 +98,11 @@ const CustomerPreview = ({ customer, setCustomer }) => {
       </div>
     </div>
   );
+};
+
+CustomerPreview.propTypes = {
+  customer: PropTypes.object.isRequired,
+  setCustomer: PropTypes.func.isRequired
 };
 
 export default CustomerPreview;

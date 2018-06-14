@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import MainNav from "./MainNav";
 
@@ -21,7 +22,7 @@ class SubHeader extends Component {
         <div onClick={this.toggleNav} className="sub-header__nav-toggle">
           <i className="fas fa-th-large" />
         </div>
-        {<MainNav className={navOpen ? "open" : ""} />}
+        {<MainNav navOpenClass={navOpen ? "open" : ""} />}
         <h2 className="sub-header__title">{title}</h2>
         {buttonText && (
           <Link
@@ -37,5 +38,12 @@ class SubHeader extends Component {
     );
   }
 }
+
+SubHeader.propTypes = {
+  title: PropTypes.string,
+  buttonText: PropTypes.string,
+  buttonLinkTo: PropTypes.string,
+  buttonStyle: PropTypes.string
+};
 
 export default SubHeader;

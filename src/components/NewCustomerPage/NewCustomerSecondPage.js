@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Field, reduxForm } from "redux-form";
+import PropTypes from "prop-types";
 import Script from "react-load-script";
 import { geocodeByAddress, getLatLng } from "react-places-autocomplete";
 import TextInput from "../../helpers/form/TextInput";
@@ -155,6 +156,11 @@ class NewCustomerSecondPage extends Component {
     );
   }
 }
+
+NewCustomerSecondPage.propTypes = {
+  prevStep: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired
+};
 
 export default reduxForm({
   form: "newCustomerForm",
