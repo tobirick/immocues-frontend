@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import Script from "react-load-script";
 import PlacesAutocomplete from "react-places-autocomplete";
 
@@ -78,5 +79,14 @@ export class PlaceInput extends Component {
     );
   }
 }
+
+PlaceInput.propTypes = {
+  input: PropTypes.object.isRequired,
+  id: PropTypes.string,
+  placeholder: PropTypes.string,
+  meta: PropTypes.object.isRequired,
+  options: PropTypes.object,
+  onSelect: PropTypes.func.isRequired
+};
 
 export default PlaceInput;

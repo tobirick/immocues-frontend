@@ -1,6 +1,13 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-const TextArea = ({ input, rows, id, placeholder, meta: { touched, error } }) => {
+const TextArea = ({
+  input,
+  rows,
+  id,
+  placeholder,
+  meta: { touched, error }
+}) => {
   return (
     <div className="form-field">
       <textarea
@@ -16,6 +23,14 @@ const TextArea = ({ input, rows, id, placeholder, meta: { touched, error } }) =>
         error && <div className="form-input__error-message">{error}</div>}
     </div>
   );
+};
+
+TextArea.propTypes = {
+  input: PropTypes.object.isRequired,
+  rows: PropTypes.string,
+  placeholder: PropTypes.string,
+  id: PropTypes.string,
+  meta: PropTypes.object.isRequired
 };
 
 export default TextArea;
