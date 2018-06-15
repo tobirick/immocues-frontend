@@ -91,7 +91,7 @@ class TagInput extends Component {
 
 TagInput.propTypes = {
   id: PropTypes.string,
-  placeholder: PropTypes.placeholder,
+  placeholder: PropTypes.string.isRequired,
   meta: PropTypes.object.isRequired,
   input: PropTypes.object.isRequired,
   onTagsChange: PropTypes.func.isRequired
