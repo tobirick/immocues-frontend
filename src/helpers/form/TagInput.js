@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class TagInput extends Component {
   state = {
-    tags: [],
+    tags: this.props.input.value || [],
     inputValue: ""
   };
   handleKeyUp = e => {

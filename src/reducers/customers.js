@@ -24,7 +24,8 @@ const customersReducerDefaultState = [
       lat: 40.7484405,
       lng: -73.98566440000002
     },
-    notes: ""
+    notes: "",
+    tags: []
   },
   {
     id: "2",
@@ -43,7 +44,8 @@ const customersReducerDefaultState = [
       lat: 40.7484405,
       lng: -73.98566440000002
     },
-    notes: ""
+    notes: "",
+    tags: []
   },
   {
     id: "3",
@@ -62,7 +64,8 @@ const customersReducerDefaultState = [
       lat: 40.7484405,
       lng: -73.98566440000002
     },
-    notes: ""
+    notes: "",
+    tags: []
   }
 ];
 
