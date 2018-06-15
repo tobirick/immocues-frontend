@@ -1,59 +1,119 @@
 .form-row {
-    margin: 2.5rem 0;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+  margin: 2.5rem 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 
-    & > div, & > label {
-        padding: 0 0.75rem;
-    }
+  & > div,
+  & > label {
+    padding: 0 0.75rem;
+  }
 
-    &--right {
-        justify-content: flex-end;
-    }
+  &--right {
+    justify-content: flex-end;
+  }
 
-    &--button {
-        padding: 0 0.75rem;
-        justify-content: space-between;
-    }
+  &--button {
+    padding: 0 0.75rem;
+    justify-content: space-between;
+  }
 }
 
 .form-field {
-    width: 100%;
+  width: 100%;
 }
 
 .form-input {
-    display: block;
-    width: 100%;
-    font-size: $default-font-size;
-    background-color: $formInputBackgroundColor;
-    border-radius: $formInputRadius;
-    color: $formInputColor;
-    border: 1px solid $formInputBorder;
-    box-shadow: none;
-    padding: 1.3rem 1rem;
-    font-family: $default-font-family;
-    @include transition(.2s ease-in all);
+  display: block;
+  width: 100%;
+  font-size: $default-font-size;
+  background-color: $formInputBackgroundColor;
+  border-radius: $formInputRadius;
+  color: $formInputColor;
+  border: 1px solid $formInputBorder;
+  box-shadow: none;
+  padding: 1.3rem 1rem;
+  font-family: $default-font-family;
+  @include transition(0.2s ease-in all);
 
-    &:focus,
-    &:active {
-        border: 1px solid $formInputBorderFocus;
-    }
+  &:focus,
+  &:active {
+    border: 1px solid $formInputBorderFocus;
+  }
 
-    &__error {
-        border: 1px solid $error-color;
-        color: $error-color;
-    }
+  &__error {
+    border: 1px solid $error-color;
+    color: $error-color;
+  }
 
-    &__error-message {
-        font-weight: bold;
-        color: $error-color;
-    }
+  &__error-message {
+    font-weight: bold;
+    color: $error-color;
+  }
+
+  &__info {
+    opacity: 0.7;
+    font-weight: bold;
+  }
 }
 
 .form-label {
-    font-weight: bold;
-    cursor: pointer;
-    margin-bottom: 0.75rem;
-    display: block;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.tag-input {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: $formInputBackgroundColor;
+  width: 100%;
+  font-size: 1.8rem;
+  border-radius: 3px;
+  color: #4a4a4a;
+  border: 1px solid #dad8d8;
+  &__list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  &__list-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $primary-color;
+    color: #fff;
+    padding: 0 1rem;
+    border-radius: 3px;
+    margin: 0.5rem 1rem;
+
+    &-text {
+      padding-right: 0.75rem;
+    }
+
+    &-icon {
+      cursor: pointer;
+      opacity: 0.6;
+      @include transition(0.2s ease-in all);
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  & input {
+    border: none;
+    width: auto;
+    display: flex;
+    flex-grow: 1;
+
+    &:focus,
+    &:active {
+      border: none;
+    }
+  }
 }
