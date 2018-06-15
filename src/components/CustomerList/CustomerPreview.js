@@ -12,8 +12,13 @@ const CustomerPreview = ({ customer, setCustomer }) => {
             <i className="fas fa-arrow-right" />
           </Link>
         </div>
-        <div onClick={setCustomer({})} className="customer__preview-button">
-          <i className="fal fa-times-circle" />
+        <div className="df">
+          <div className="customer__preview-button mr-2">
+            <i className="fal fa-user-edit" />
+          </div>
+          <div onClick={setCustomer({})} className="customer__preview-button">
+            <i className="fal fa-times-circle" />
+          </div>
         </div>
       </div>
       <div className="customer__preview-header">

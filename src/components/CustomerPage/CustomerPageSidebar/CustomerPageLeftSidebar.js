@@ -22,7 +22,7 @@ const CustomerPageLeftSidebar = ({ customer }) => {
           </span>
         </div>
         <div className="customer__header-info-right">
-          <i className="far fa-star" />
+          <i className="fal fa-user-edit" />
           <i className="far fa-ellipsis-v" />
         </div>
       </div>
