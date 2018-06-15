@@ -24,6 +24,11 @@ const NewCustomerThirdPage = ({ prevStep, handleSubmit }) => {
         </div>
         <div className="form-row">
           <label htmlFor="" className="form-label">
+            Tags
+          </label>
+        </div>
+        <div className="form-row">
+          <label htmlFor="" className="form-label">
             Profile Image
           </label>
         </div>

@@ -1,0 +1,19 @@
+.sidebar-nav {
+  &__item {
+    list-style-type: none;
+  }
+
+  &__item-link {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    padding: 1rem;
+    @include transition(0.2s ease-in all);
+    &.active,
+    &:hover {
+      color: #fff;
+      background-color: $primary-color;
+      text-decoration: none;
+    }
+  }
+}

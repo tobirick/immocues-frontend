@@ -11,17 +11,22 @@ const Header = () => (
     <nav className="main-header__nav">
       <ul>
         <li className="main-header__nav-item">
-          <NavLink className="main-header__nav-item-link" to="/">
-            <i className="fal fa-user" />
+          <a className="main-header__nav-item-link">
+            <i className="fal fa-bell" />
+          </a>
+        </li>
+        <li className="main-header__nav-item">
+          <NavLink className="main-header__nav-item-link" to="/admin">
+            <i className="fal fa-lock" />
           </NavLink>
         </li>
         <li className="main-header__nav-item">
-          <NavLink className="main-header__nav-item-link" to="/">
+          <NavLink className="main-header__nav-item-link" to="/settings">
             <i className="fal fa-cog" />
           </NavLink>
         </li>
         <li className="main-header__nav-item">
-          <NavLink className="main-header__nav-item-link" to="/">
+          <NavLink className="main-header__nav-item-link" to="/logout">
             <i className="fal fa-sign-out-alt" />
           </NavLink>
         </li>

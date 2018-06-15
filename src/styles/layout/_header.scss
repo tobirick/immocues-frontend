@@ -19,8 +19,8 @@
   }
 
   &__nav {
-      flex-grow: 1;
-      border-bottom: solid 1px #eeeeee;
+    flex-grow: 1;
+    border-bottom: solid 1px #eeeeee;
     & ul {
       display: flex;
       height: 100%;
@@ -45,8 +45,12 @@
     color: #838d8f;
     font-size: 2rem;
 
+    &.active {
+      color: $primary-color;
+    }
+
     &:hover {
-        color: #3a3d3f;
+      color: #3a3d3f;
     }
   }
 }

@@ -24,6 +24,12 @@ const MainNav = ({ navOpenClass }) => {
             Objects
           </NavLink>
         </li>
+        <li className="main-nav__item">
+          <NavLink className="main-nav__item-link" to="/calendar">
+            <i className="fal fa-calendar-alt" />
+            Calendar
+          </NavLink>
+        </li>
       </ul>
     </div>
   );

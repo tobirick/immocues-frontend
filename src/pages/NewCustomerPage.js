@@ -24,10 +24,15 @@ class NewCustomerPage extends Component {
   onFormSubmit = values => {
     values.profileImageSrc = "/img/default-profile.png";
     values.id = cuid();
+    this.props.startCreateCustomer(values);
+    this.props.reset();
+    this.props.history.push("/customers");
+    /*
     this.props.startCreateCustomer(values).then(() => {
       this.props.reset();
       this.props.history.push("/customers");
     });
+    */
   };
 
   nextStep = () => {
