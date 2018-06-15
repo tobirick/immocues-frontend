@@ -34,6 +34,25 @@ const CustomerPreview = ({ customer, setCustomer }) => {
       </div>
       <div className="customer__basic-info">
         <div className="customer__basic-info-item">
+          <div className="customer__basic-info-item-label">Tags</div>
+          <div className="customer__basic-info-item-text">
+            <div className="customer__basic-info-tags">
+              {customer.tags && customer.tags.length > 0
+                ? customer.tags.map((tag, index) => {
+                    return (
+                      <div
+                        key={index}
+                        className="customer__basic-info-tag-item"
+                      >
+                        {tag}
+                      </div>
+                    );
+                  })
+                : "---"}
+            </div>
+          </div>
+        </div>
+        <div className="customer__basic-info-item">
           <div className="customer__basic-info-item-label">Name</div>
           <div className="customer__basic-info-item-text">
             {customer.firstName} {customer.lastName}

@@ -25,7 +25,7 @@ const customersReducerDefaultState = [
       lng: -73.98566440000002
     },
     notes: "",
-    tags: []
+    tags: ["tag1", "tag2"]
   },
   {
     id: "2",
