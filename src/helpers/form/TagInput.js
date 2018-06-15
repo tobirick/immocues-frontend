@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 class TagInput extends Component {
   state = {
@@ -87,5 +88,13 @@ class TagInput extends Component {
     );
   }
 }
+
+TagInput.propTypes = {
+  id: PropTypes.string,
+  placeholder: PropTypes.placeholder,
+  meta: PropTypes.object.isRequired,
+  input: PropTypes.object.isRequired,
+  onTagsChange: PropTypes.func.isRequired
+};
 
 export default TagInput;
