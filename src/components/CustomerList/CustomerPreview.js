@@ -8,7 +8,7 @@ const CustomerPreview = ({ customer, setCustomer }) => {
     <div className="customer__preview">
       <div className="customer__preview-actions">
         <div className="customer__preview-button">
-          <Link to={`/customers/${customer.id}`}>
+          <Link to={`/customers/${customer._id}`}>
             <i className="fas fa-arrow-right" />
           </Link>
         </div>

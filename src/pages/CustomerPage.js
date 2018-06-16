@@ -12,9 +12,9 @@ const mapState = (state, ownProps) => {
 
   if (customerId && state.customers.length > 0) {
     customer = state.customers.filter(
-      customer => customer.id === customerId
+      customer => customer._id === customerId
     )[0];
-    index = state.customers.findIndex(customer => customer.id === customerId);
+    index = state.customers.findIndex(customer => customer._id === customerId);
   }
 
   return {
@@ -22,10 +22,10 @@ const mapState = (state, ownProps) => {
     numberOfEvents: state.customers.length,
     currentEventNumber: index + 1,
     prevEventId: state.customers[index - 1]
-      ? state.customers[index - 1].id
+      ? state.customers[index - 1]._id
       : false,
     nextEventId: state.customers[index + 1]
-      ? state.customers[index + 1].id
+      ? state.customers[index + 1]._id
       : false
   };
 };

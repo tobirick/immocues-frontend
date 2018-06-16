@@ -4,7 +4,11 @@ const apiURL = process.env.API_URL;
 
 export default {
   customers: {
-    fetchAll: "",
+    fetchAll: () => {
+      return axios
+        .get(`${apiURL}/customers`)
+        .then(response => response.data.customers);
+    },
     create: customer => {
       return axios
         .post(`${apiURL}/customers`, { customer })

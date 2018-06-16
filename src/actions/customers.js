@@ -17,12 +17,9 @@ const createCustomer = customer => {
 
 export const startCreateCustomer = customerData => {
   return dispatch => {
-    dispatch(createCustomer(customerData));
-    /*
     return api.customers.create(customerData).then(customer => {
       dispatch(createCustomer(customer));
     });
-    */
   };
 };
 
@@ -55,7 +52,7 @@ export const startFetchAllCustomers = () => {
       customersData.forEach(customer => {
         customers.push(customer);
       });
-      dispatch(fetchCustomers(customers));
+      dispatch(fetchAllCustomers(customers));
     });
   };
 };
