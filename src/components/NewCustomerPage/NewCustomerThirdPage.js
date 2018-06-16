@@ -40,7 +40,8 @@ class NewCustomerThirdPage extends Component {
               onTagsChange={this.onTagsChange}
             />
           </div>
-          <div className="form-row">
+          {/*
+    <div className="form-row">
             <label htmlFor="" className="form-label">
               Profile Image
             </label>
@@ -50,6 +51,8 @@ class NewCustomerThirdPage extends Component {
               Additional Files
             </label>
           </div>
+    */}
+
           <div className="form-row form-row--right form-row--button">
             <button type="button" onClick={prevStep} className="button-primary">
               Previous
