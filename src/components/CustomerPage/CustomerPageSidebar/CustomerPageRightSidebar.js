@@ -55,7 +55,7 @@ class CustomerPageRightSidebar extends Component {
                 Next <i className="fal fa-angle-right" />
               </Link>
             ) : (
-              <Link to={`/customers/${customer.id}`}>
+              <Link to={`/customers/${customer._id}`}>
                 Next <i className="fal fa-angle-right" />
               </Link>
             )}
