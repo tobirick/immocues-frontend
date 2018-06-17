@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { reduxForm } from "redux-form";
-import cuid from "cuid";
 import { startCreateCustomer } from "../actions/customers";
 import SubHeader from "../components/Layout/SubHeader";
 import NewCustomerFirstPage from "../components/NewCustomerPage/NewCustomerFirstPage";

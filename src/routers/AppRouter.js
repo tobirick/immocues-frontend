@@ -1,6 +1,9 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
+import UserRoute from "../helpers/auth/UserRoute";
+import GuestRoute from "../helpers/auth/GuestRoute";
+
 import Header from "../components/Layout/Header";
 import DashboardPage from "../pages/DashboardPage";
 
@@ -18,22 +21,25 @@ import CalendarPage from "../pages/CalendarPage";
 
 import SettingsPage from "../pages/Settings/SettingsPage";
 
+import LoginPage from "../pages/Auth/LoginPage";
+
 const AppRouter = () => (
   <BrowserRouter>
     <div>
       <Header />
       <Switch>
-        <Route path="/" component={DashboardPage} exact />
-        <Route path="/customers" component={CustomersPage} exact />
-        <Route path="/customers/new" component={NewCustomerPage} exact />
-        <Route path="/customers/:id/edit" component={EditCustomerPage} />
-        <Route path="/customers/:id" component={CustomerPage} />
-        <Route path="/objects" component={ObjectsPage} exact />
-        <Route path="/objects/new" component={NewObjectPage} exact />
-        <Route path="/objects/:id/edit" component={EditObjectPage} />
-        <Route path="/objects/:id" component={ObjectPage} />
-        <Route path="/calendar" component={CalendarPage} exact />
-        <Route path="/settings" component={SettingsPage} />
+        <GuestRoute path="/login" component={LoginPage} exact />
+        <UserRoute path="/dashboard" component={DashboardPage} exact />
+        <UserRoute path="/customers" component={CustomersPage} exact />
+        <UserRoute path="/customers/new" component={NewCustomerPage} exact />
+        <UserRoute path="/customers/:id/edit" component={EditCustomerPage} />
+        <UserRoute path="/customers/:id" component={CustomerPage} />
+        <UserRoute path="/objects" component={ObjectsPage} exact />
+        <UserRoute path="/objects/new" component={NewObjectPage} exact />
+        <UserRoute path="/objects/:id/edit" component={EditObjectPage} />
+        <UserRoute path="/objects/:id" component={ObjectPage} />
+        <UserRoute path="/calendar" component={CalendarPage} exact />
+        <UserRoute path="/settings" component={SettingsPage} />
       </Switch>
     </div>
   </BrowserRouter>

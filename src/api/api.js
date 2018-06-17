@@ -3,6 +3,18 @@ import axios from "axios";
 const apiURL = process.env.API_URL;
 
 export default {
+  user: {
+    login: credentials => {
+      return axios
+        .post(`${apiURL}/users/login`, { credentials })
+        .then(response => response.data);
+    },
+    validateToken: token => {
+      return axios
+        .post(`${apiURL}/users/validate_token`, { token })
+        .then(response => response.data);
+    }
+  },
   customers: {
     fetchAll: () => {
       return axios
