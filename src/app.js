@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import AppRouter from "./routers/AppRouter";
 import configureStore from "./store/configureStore";
-import { startFetchAllCustomers } from "./actions/customers";
 import decode from "jwt-decode";
 import { login, validateToken } from "./actions/auth";
 import setAuthorizationHeader from "./helpers/utils/setAuthorizationHeader";
@@ -18,7 +17,6 @@ if (localStorage.immocuesJWT) {
     const user = { _id: payload._id, email: payload.email };
     setAuthorizationHeader(localStorage.immocuesJWT);
     store.dispatch(login(user));
-    store.dispatch(startFetchAllCustomers());
   });
 }
 

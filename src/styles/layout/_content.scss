@@ -1,15 +1,19 @@
 .content {
-    background-color: #f0f0f0;
-    min-height: calc(100vh - 12rem);
+  background-color: #f0f0f0;
+  min-height: calc(100vh - 12rem);
 
-    &__box {
-        background-color: #fff;
-        @include box-shadow();
+  &--login {
+    min-height: calc(100vh - 6rem);
+  }
 
-        &--main {
-            width: 95%;
-            margin: 0 auto;
-            padding: 2rem;
-        }
+  &__box {
+    background-color: #fff;
+    @include box-shadow();
+
+    &--main {
+      width: 95%;
+      margin: 0 auto;
+      padding: 2rem;
     }
+  }
 }

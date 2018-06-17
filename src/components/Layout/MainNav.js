@@ -7,7 +7,7 @@ const MainNav = ({ navOpenClass }) => {
     <div className={`main-nav ${navOpenClass}`}>
       <ul>
         <li className="main-nav__item">
-          <NavLink exact className="main-nav__item-link" to="/">
+          <NavLink exact className="main-nav__item-link" to="/dashboard">
             <i className="fal fa-tachometer" />
             Home
           </NavLink>

@@ -5,56 +5,79 @@ import { Field, reduxForm } from "redux-form";
 import { startLogin } from "../../actions/auth";
 import TextInput from "../../helpers/form/TextInput";
 
+import validate from "../../validators/loginForm";
+
 const actions = {
   startLogin
 };
 
 export class LoginPage extends Component {
+  state = {
+    error: false
+  };
   onFormSubmit = values => {
-    console.log(values);
-    this.props.startLogin(values).then(() => {
-      this.props.history.push("/dashboard");
-    });
+    this.props
+      .startLogin(values)
+      .then(() => {
+        this.props.history.push("/dashboard");
+      })
+      .catch(() => {
+        this.setState({
+          error: true
+        });
+      });
   };
 
   render() {
     const { handleSubmit } = this.props;
+    const { error } = this.state;
     return (
-      <div>
-        <h1>Login Page</h1>
-        <form onSubmit={handleSubmit(this.onFormSubmit)}>
-          <div className="form-row">
-            <div className="col-12">
-              <label className="form-label" htmlFor="email">
-                E-Mail
-              </label>
-              <Field
-                id="email"
-                name="email"
-                type="text"
-                component={TextInput}
-                placeholder="E-Mail"
-              />
+      <div className="content-wrapper">
+        <div className="content content--login pt-3 center-h-flex">
+          <div className="col-12 col-md-6">
+            <div className="content__box content__box--main">
+              {error && (
+                <div className="alert alert--error">
+                  Authentication failed. Please try again.
+                </div>
+              )}
+              <h1>Login to Immocues</h1>
+              <form onSubmit={handleSubmit(this.onFormSubmit)}>
+                <div className="form-row">
+                  <div className="col-12">
+                    <label className="form-label" htmlFor="email">
+                      E-Mail
+                    </label>
+                    <Field
+                      id="email"
+                      name="email"
+                      type="text"
+                      component={TextInput}
+                      placeholder="E-Mail"
+                    />
+                  </div>
+                </div>
+                <div className="form-row">
+                  <div className="col-12">
+                    <label className="form-label" htmlFor="password">
+                      Password
+                    </label>
+                    <Field
+                      id="password"
+                      name="password"
+                      type="password"
+                      component={TextInput}
+                      placeholder="Password"
+                    />
+                  </div>
+                </div>
+                <button type="submit" className="button-primary block">
+                  Submit
+                </button>
+              </form>
             </div>
           </div>
-          <div className="form-row">
-            <div className="col-12">
-              <label className="form-label" htmlFor="password">
-                Password
-              </label>
-              <Field
-                id="password"
-                name="password"
-                type="password"
-                component={TextInput}
-                placeholder="Password"
-              />
-            </div>
-          </div>
-          <button type="submit" className="button-primary">
-            Submit
-          </button>
-        </form>
+        </div>
       </div>
     );
   }
@@ -69,6 +92,7 @@ export default connect(
   actions
 )(
   reduxForm({
-    form: "login"
+    form: "login",
+    validate
   })(LoginPage)
 );

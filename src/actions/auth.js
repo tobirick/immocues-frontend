@@ -14,7 +14,6 @@ export const login = user => {
 export const startLogin = credentials => {
   return dispatch => {
     return api.user.login(credentials).then(response => {
-      console.log(response.user);
       localStorage.immocuesJWT = response.token;
       setAuthorizationHeader(response.token);
       dispatch(login(response.user));
