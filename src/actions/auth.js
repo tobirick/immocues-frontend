@@ -1,6 +1,7 @@
 import { LOGIN_USER, SIGN_OUT_USER } from "../constants/auth";
 import api from "../api/api";
 import setAuthorizationHeader from "../helpers/utils/setAuthorizationHeader";
+import { unsetCustomers, startFetchAllCustomers } from "./customers";
 
 export const login = user => {
   return {
@@ -17,6 +18,7 @@ export const startLogin = credentials => {
       localStorage.immocuesJWT = response.token;
       setAuthorizationHeader(response.token);
       dispatch(login(response.user));
+      dispatch(startFetchAllCustomers());
     });
   };
 };
@@ -30,6 +32,7 @@ export const startSignOut = () => {
     localStorage.removeItem("immocuesJWT");
     setAuthorizationHeader();
     dispatch(signOut());
+    dispatch(unsetCustomers());
   };
 };
 

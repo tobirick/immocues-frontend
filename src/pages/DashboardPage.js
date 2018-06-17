@@ -2,21 +2,11 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import SubHeader from "../components/Layout/SubHeader";
 
-import { startFetchAllCustomers } from "../actions/customers";
-
 const mapState = state => ({
   currentUser: state.auth.currentUser
 });
 
-const mapActions = dispatch => ({
-  startFetchAllCustomers: () => dispatch(startFetchAllCustomers())
-});
-
 class DashboardPage extends Component {
-  componentWillMount = () => {
-    this.props.startFetchAllCustomers();
-  };
-
   render() {
     const { currentUser } = this.props;
     return (
@@ -28,7 +18,4 @@ class DashboardPage extends Component {
   }
 }
 
-export default connect(
-  mapState,
-  mapActions
-)(DashboardPage);
+export default connect(mapState)(DashboardPage);

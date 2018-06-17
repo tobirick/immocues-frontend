@@ -2,7 +2,8 @@ import {
   CREATE_CUSTOMER,
   DELETE_CUSTOMER,
   UPDATE_CUSTOMER,
-  FETCH_ALL_CUSTOMERS
+  FETCH_ALL_CUSTOMERS,
+  UNSET_CUSTOMERS
 } from "../constants/customers";
 import api from "../api/api";
 
@@ -54,5 +55,11 @@ export const startFetchAllCustomers = () => {
       });
       dispatch(fetchAllCustomers(customers));
     });
+  };
+};
+
+export const unsetCustomers = () => {
+  return {
+    type: UNSET_CUSTOMERS
   };
 };
