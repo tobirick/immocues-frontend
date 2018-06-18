@@ -33,12 +33,28 @@ export const updateCustomer = customer => {
   };
 };
 
+export const startUpdateCustomer = (id, customer) => {
+  return dispatch => {
+    return api.customers.update(id, customer).then(customer => {
+      dispatch(updateCustomer(customer));
+    });
+  };
+};
+
 export const deleteCustomer = customerId => {
   return {
     type: DELETE_CUSTOMER,
     payload: {
       customerId
     }
+  };
+};
+
+export const startDeleteCustomer = id => {
+  return dispatch => {
+    return api.customers.delete(id).then(() => {
+      dispatch(deleteCustomer(id));
+    });
   };
 };
 
