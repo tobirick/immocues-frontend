@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import UserRoute from "../helpers/auth/UserRoute";
 import GuestRoute from "../helpers/auth/GuestRoute";
+import AdminRoute from "../helpers/auth/AdminRoute";
 
 import Header from "../components/Layout/Header";
 import DashboardPage from "../pages/DashboardPage";
@@ -22,6 +23,7 @@ import CalendarPage from "../pages/CalendarPage";
 import SettingsPage from "../pages/Settings/SettingsPage";
 
 import AdminPage from "../pages/Admin/AdminPage";
+import NewEmployeePage from "../pages/Admin/NewEmployeePage";
 
 import LoginPage from "../pages/Auth/LoginPage";
 
@@ -45,7 +47,8 @@ const AppRouter = () => (
         <UserRoute path="/objects/:id" component={ObjectPage} />
         <UserRoute path="/calendar" component={CalendarPage} exact />
         <UserRoute path="/settings" component={SettingsPage} />
-        <UserRoute path="/admin" component={AdminPage} />
+        <AdminRoute path="/admin" component={AdminPage} />
+        <AdminRoute path="/employees/new" component={NewEmployeePage} />
       </Switch>
     </div>
   </BrowserRouter>

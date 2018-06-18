@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
+import UserRoute from "../../helpers/auth/UserRoute";
 import SubHeader from "../../components/Layout/SubHeader";
 import BasicPage from "./BasicPage";
 import AboutPage from "./AboutPage";
@@ -17,9 +18,17 @@ export class SettingsPage extends Component {
               <div className="content__box p-2">
                 <Switch>
                   <Redirect exact from="/settings" to="/settings/basic" />
-                  <Route path="/settings/basic" component={BasicPage} exact />
-                  <Route path="/settings/about" component={AboutPage} exact />
-                  <Route
+                  <UserRoute
+                    path="/settings/basic"
+                    component={BasicPage}
+                    exact
+                  />
+                  <UserRoute
+                    path="/settings/about"
+                    component={AboutPage}
+                    exact
+                  />
+                  <UserRoute
                     path="/settings/account"
                     component={AccountPage}
                     exact

@@ -1,110 +1,180 @@
-.align-center { text-align: center; }
-.align-right { text-align: right; }
-.align-left { text-align: left; }
-.center-h-flex { display: flex; justify-content: center; }
-.center-v-flex { display: flex; align-items: center; }
-.start-h-flex { display: flex; justify-content: flex-start; }
-.start-v-flex { display: flex; align-items: flex-start; }
-.end-h-flex { display: flex; justify-content: flex-end; }
-.end-v-flex { display: flex; align-items: flex-end; }
-.hidden { visibility: hidden; }
-.visible { visibility: visible; }
-
-.dp { display: block; }
-.dip { display: inline-block; }
-.df { display: flex; }
-.dif { display: inline-flex; }
-.dn { display: none; }
-
-.fr { float: right; }
-.fl { float: left; }
-
-.fw { flex-wrap: wrap; }
-.nfw { flex-wrap: nowrap; }
-
-.mw-100 { max-width: 100%; }
-.w-100 { width:100%; }
-
-.cursor-p { cursor: pointer; }
-.cursor-m { cursor: move; }
-
-.smaller {font-size: 80%};
-.bigger{font-size: 120%};
-
-.center-abs-top {
-    position: absolute;
-    top: 50%;
-    transform: translate(0, -50%);
+.align-center {
+  text-align: center;
+}
+.align-right {
+  text-align: right;
+}
+.align-left {
+  text-align: left;
+}
+.center-h-flex {
+  display: flex;
+  justify-content: center;
+}
+.center-v-flex {
+  display: flex;
+  align-items: center;
+}
+.start-h-flex {
+  display: flex;
+  justify-content: flex-start;
+}
+.start-v-flex {
+  display: flex;
+  align-items: flex-start;
+}
+.end-h-flex {
+  display: flex;
+  justify-content: flex-end;
+}
+.end-v-flex {
+  display: flex;
+  align-items: flex-end;
+}
+.space-h-flex {
+  display: flex;
+  justify-content: space-between;
+}
+.hidden {
+  visibility: hidden;
+}
+.visible {
+  visibility: visible;
 }
 
-.box-shadow { @include box-shadow(); }
+.dp {
+  display: block;
+}
+.dip {
+  display: inline-block;
+}
+.df {
+  display: flex;
+}
+.dif {
+  display: inline-flex;
+}
+.dn {
+  display: none;
+}
+
+.fr {
+  float: right;
+}
+.fl {
+  float: left;
+}
+
+.fw {
+  flex-wrap: wrap;
+}
+.nfw {
+  flex-wrap: nowrap;
+}
+
+.mw-100 {
+  max-width: 100%;
+}
+.w-100 {
+  width: 100%;
+}
+
+.cursor-p {
+  cursor: pointer;
+}
+.cursor-m {
+  cursor: move;
+}
+
+.smaller {
+  font-size: 80%;
+}
+.bigger {
+  font-size: 120%;
+}
+
+.center-abs-top {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.box-shadow {
+  @include box-shadow();
+}
 
 @for $i from 1 through 5 {
-    .mt-#{$i} {
-        margin-top: #{$i}rem;
-    }
+  .mt-#{$i} {
+    margin-top: #{$i}rem;
+  }
 
-    .mb-#{$i} {
-        margin-bottom: #{$i}rem;
-    }
+  .mb-#{$i} {
+    margin-bottom: #{$i}rem;
+  }
 
-    .mr-#{$i} {
-        margin-right: #{$i}rem;
-    }
+  .mr-#{$i} {
+    margin-right: #{$i}rem;
+  }
 
-    .ml-#{$i} {
-        margin-left: #{$i}rem;
-    }
+  .ml-#{$i} {
+    margin-left: #{$i}rem;
+  }
 
-    .m-#{$i} {
-        margin: #{$i}rem;
-    }
+  .m-#{$i} {
+    margin: #{$i}rem;
+  }
 
-    .pt-#{$i} {
-        padding-top: #{$i}rem;
-    }
+  .pt-#{$i} {
+    padding-top: #{$i}rem;
+  }
 
-    .pb-#{$i} {
-        padding-bottom: #{$i}rem;
-    }
+  .pb-#{$i} {
+    padding-bottom: #{$i}rem;
+  }
 
-    .pr-#{$i} {
-        padding-right: #{$i}rem;
-    }
+  .pr-#{$i} {
+    padding-right: #{$i}rem;
+  }
 
-    .pl-#{$i} {
-        padding-left: #{$i}rem;
-    }
+  .pl-#{$i} {
+    padding-left: #{$i}rem;
+  }
 
-    .p-#{$i} {
-        padding: #{$i}rem;
-    }
+  .p-#{$i} {
+    padding: #{$i}rem;
+  }
 }
 
 @include media-sm-max {
-    .hidden-sm {
-        display:none !important;
-    }
+  .hidden-sm {
+    display: none !important;
+  }
 }
 
 @include media-md-max {
-    .hidden-md {
-        display:none !important;
-    }
+  .hidden-md {
+    display: none !important;
+  }
 }
 
 @include media-lg-max {
-    .hidden-lg {
-        display:none !important;
-    }
+  .hidden-lg {
+    display: none !important;
+  }
 }
 
 @include media-xl-max {
-    .hidden-xl {
-        display:none !important;
-    }
+  .hidden-xl {
+    display: none !important;
+  }
 }
 
-.not-so-light-text { color: lighten($default-text-color, 25%) }
-.light-text { color: lighten($default-text-color, 50%) }
-.smaller-text { font-size: 85% };
+.not-so-light-text {
+  color: lighten($default-text-color, 25%);
+}
+.light-text {
+  color: lighten($default-text-color, 50%);
+}
+.smaller-text {
+  font-size: 85%;
+}

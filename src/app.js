@@ -32,7 +32,11 @@ if (localStorage.immocuesJWT) {
     .dispatch(validateToken(localStorage.immocuesJWT))
     .then(() => {
       const payload = decode(localStorage.immocuesJWT);
-      const user = { _id: payload._id, email: payload.email };
+      const user = {
+        userId: payload.userId,
+        email: payload.email,
+        isAdmin: payload.isAdmin
+      };
       setAuthorizationHeader(localStorage.immocuesJWT);
       store.dispatch(login(user));
       store.dispatch(startFetchAllCustomers());

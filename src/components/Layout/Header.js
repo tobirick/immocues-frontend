@@ -8,10 +8,11 @@ const actions = {
 };
 
 const mapState = state => ({
-  isAuthenticated: state.auth.authenticated
+  isAuthenticated: state.auth.authenticated,
+  isAdmin: state.auth.currentUser.isAdmin
 });
 
-const Header = ({ startSignOut, isAuthenticated }) => (
+const Header = ({ startSignOut, isAuthenticated, isAdmin }) => (
   <header className="main-header">
     <div className="main-header__logo">
       <Link to="/dashboard">
@@ -26,11 +27,13 @@ const Header = ({ startSignOut, isAuthenticated }) => (
               <i className="fal fa-bell" />
             </a>
           </li>
-          <li className="main-header__nav-item">
-            <NavLink className="main-header__nav-item-link" to="/admin">
-              <i className="fal fa-lock" />
-            </NavLink>
-          </li>
+          {isAdmin && (
+            <li className="main-header__nav-item">
+              <NavLink className="main-header__nav-item-link" to="/admin">
+                <i className="fal fa-lock" />
+              </NavLink>
+            </li>
+          )}
           <li className="main-header__nav-item">
             <NavLink className="main-header__nav-item-link" to="/settings">
               <i className="fal fa-cog" />
