@@ -16,9 +16,13 @@ export default {
     },
     signUp: user => {
       return axios
-        .post(`${apiURL}/users/register`, { user })
+        .post(`${apiURL}/users/signup`, { user })
         .then(response => response.data);
-    }
+    },
+    fetchAll: () => {
+      return axios.get(`${apiURL}/users`).then(response => response.data.users);
+    },
+    delete: ""
   },
   customers: {
     fetchAll: () => {

@@ -1,4 +1,10 @@
-import { LOGIN_USER, SIGN_OUT_USER, SIGN_UP_USER } from "../constants/auth";
+import {
+  LOGIN_USER,
+  SIGN_OUT_USER,
+  SIGN_UP_USER,
+  FETCH_ALL_USERS,
+  DELETE_USER
+} from "../constants/auth";
 import api from "../api/api";
 import setAuthorizationHeader from "../helpers/utils/setAuthorizationHeader";
 import { unsetCustomers, startFetchAllCustomers } from "./customers";
@@ -57,6 +63,26 @@ export const startSignUp = user => {
   return dispatch => {
     return api.user.signUp(user).then(response => {
       dispatch(signUp(response.user));
+    });
+  };
+};
+
+export const deleteCustomer = userId => {
+  return { type: DELETE_CUSTOMER, payload: { userId } };
+};
+
+const fetchAllUsers = users => {
+  return { type: FETCH_ALL_USERS, payload: { users } };
+};
+
+export const startFetchAllUsers = () => {
+  return dispatch => {
+    return api.users.fetchAll().then(usersData => {
+      const users = [];
+      usersData.forEach(user => {
+        users.push(user);
+      });
+      dispatch(fetchAllUsers(users));
     });
   };
 };

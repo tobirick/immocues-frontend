@@ -15,13 +15,13 @@ export const createCustomer = (state, payload) => {
 
 export const updateCustomer = (state, payload) => {
   return [
-    ...state.filter(customer => customer.id !== payload.customer.id),
+    ...state.filter(customer => customer._id !== payload.customer._id),
     Object.assign({}, payload.customer)
   ];
 };
 
 export const deleteCustomer = (state, payload) => {
-  return [...state.filter(customer => customer.id !== payload.customerId)];
+  return [...state.filter(customer => customer._id !== payload.customerId)];
 };
 
 export const fetchAllCustomers = (state, payload) => {

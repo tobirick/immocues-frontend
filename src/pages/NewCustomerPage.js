@@ -21,7 +21,6 @@ class NewCustomerPage extends Component {
   };
 
   onFormSubmit = values => {
-    console.log(values);
     values.profileImageSrc = "/img/default-profile.png";
     this.props.startCreateCustomer(values).then(() => {
       this.props.reset();
