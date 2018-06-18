@@ -22,7 +22,16 @@ export default {
     fetchAll: () => {
       return axios.get(`${apiURL}/users`).then(response => response.data.users);
     },
-    delete: ""
+    update: (id, user) => {
+      return axios
+        .put(`${apiURL}/users/${id}`, { user })
+        .then(response => response.data);
+    },
+    delete: id => {
+      return axios
+        .delete(`${apiURL}/users/${id}`)
+        .then(response => response.data);
+    }
   },
   customers: {
     fetchAll: () => {
@@ -35,8 +44,16 @@ export default {
         .post(`${apiURL}/customers`, { customer })
         .then(response => response.data.customer);
     },
-    update: "",
-    delete: ""
+    update: (id, customer) => {
+      return axios
+        .put(`${apiURL}/customers/${id}`, { customer })
+        .then(response => response.data);
+    },
+    delete: id => {
+      return axios
+        .delete(`${apiURL}/customers/${id}`)
+        .then(response => response.data);
+    }
   },
   objects: {
     fetchAll: "",
