@@ -11,7 +11,11 @@ class DashboardPage extends Component {
     const { currentUser } = this.props;
     return (
       <div className="content-wrapper">
-        <SubHeader title={`Hey, nice to see you '${currentUser.email}'!`} />
+        <SubHeader
+          title={`Hey, nice to see you '${currentUser.firstName} ${
+            currentUser.lastName
+          }'!`}
+        />
         <div className="content" />
       </div>
     );

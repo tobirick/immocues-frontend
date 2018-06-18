@@ -35,7 +35,9 @@ if (localStorage.immocuesJWT) {
       const user = {
         userId: payload.userId,
         email: payload.email,
-        isAdmin: payload.isAdmin
+        isAdmin: payload.isAdmin,
+        firstName: payload.firstName,
+        lastName: payload.lastName
       };
       setAuthorizationHeader(localStorage.immocuesJWT);
       store.dispatch(login(user));
