@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Script from "react-load-script";
 
 import UserRoute from "../helpers/auth/UserRoute";
 import GuestRoute from "../helpers/auth/GuestRoute";
@@ -32,6 +33,7 @@ import Home from "../pages/LandingPage/Home";
 const AppRouter = () => (
   <BrowserRouter>
     <div>
+      <Script url="/fontawesome-all.min.js" />
       <Header />
       <Switch>
         <Route path="/" component={Home} exact />
