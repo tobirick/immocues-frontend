@@ -3,7 +3,9 @@ import {
   SIGN_OUT_USER,
   SIGN_UP_USER,
   FETCH_ALL_USERS,
-  DELETE_USER
+  DELETE_USER,
+  UPDATE_USER,
+  UNSET_USERS
 } from "../constants/auth";
 import api from "../api/api";
 import setAuthorizationHeader from "../helpers/utils/setAuthorizationHeader";
@@ -84,5 +86,40 @@ export const startFetchAllUsers = () => {
       });
       dispatch(fetchAllUsers(users));
     });
+  };
+};
+
+export const updateUser = user => {
+  return {
+    type: UPDATE_USER,
+    payload: {
+      user
+    }
+  };
+};
+
+export const startUpdateUser = (id, user) => {
+  return dispatch => {
+    return api.users.update(id, user).then(user => {
+      dispatch(updateUser(user));
+    });
+  };
+};
+
+export const deleteUser = userId => {
+  return { type: DELETE_USER, payload: { userId } };
+};
+
+export const startDeleteUser = id => {
+  return dispatch => {
+    return api.users.delete(id).then(() => {
+      dispatch(deleteUser(id));
+    });
+  };
+};
+
+export const unsetUsers = () => {
+  return {
+    type: UNSET_USERS
   };
 };

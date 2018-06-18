@@ -2,8 +2,10 @@ import {
   LOGIN_USER,
   SIGN_OUT_USER,
   SIGN_UP_USER,
+  FETCH_ALL_USERS,
   DELETE_USER,
-  FETCH_ALL_USERS
+  UPDATE_USER,
+  UNSET_USERS
 } from "../constants/auth";
 import { createReducer } from "../helpers/utils/reducerUtil";
 
@@ -54,10 +56,22 @@ export const unsetUsers = (state, playoad) => {
   };
 };
 
+export const updateUser = (state, payload) => {
+  return {
+    ...state,
+    users: [
+      ...state.filter(user => user._id !== payload.user._id),
+      Object.assign({}, payload.user)
+    ]
+  };
+};
+
 export default createReducer(initialState, {
   [LOGIN_USER]: loginUser,
   [SIGN_OUT_USER]: signOutUser,
   [SIGN_UP_USER]: signUpUser,
   [FETCH_ALL_USERS]: fetchAllUsers,
-  [DELETE_USER]: deleteUser
+  [DELETE_USER]: deleteUser,
+  [UNSET_USERS]: unsetUsers,
+  [UPDATE_USER]: updateUser
 });
