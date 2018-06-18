@@ -1,4 +1,4 @@
-import { LOGIN_USER, SIGN_OUT_USER } from "../constants/auth";
+import { LOGIN_USER, SIGN_OUT_USER, SIGN_UP_USER } from "../constants/auth";
 import { createReducer } from "../helpers/utils/reducerUtil";
 
 const initialState = {
@@ -22,7 +22,12 @@ export const signOutUser = (state, payload) => {
   };
 };
 
+export const signUpUser = (state, payload) => {
+  return state;
+};
+
 export default createReducer(initialState, {
   [LOGIN_USER]: loginUser,
-  [SIGN_OUT_USER]: signOutUser
+  [SIGN_OUT_USER]: signOutUser,
+  [SIGN_UP_USER]: signUpUser
 });

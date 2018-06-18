@@ -21,13 +21,18 @@ import CalendarPage from "../pages/CalendarPage";
 
 import SettingsPage from "../pages/Settings/SettingsPage";
 
+import AdminPage from "../pages/Admin/AdminPage";
+
 import LoginPage from "../pages/Auth/LoginPage";
+
+import Home from "../pages/LandingPage/Home";
 
 const AppRouter = () => (
   <BrowserRouter>
     <div>
       <Header />
       <Switch>
+        <Route path="/" component={Home} exact />
         <GuestRoute path="/login" component={LoginPage} exact />
         <UserRoute path="/dashboard" component={DashboardPage} exact />
         <UserRoute path="/customers" component={CustomersPage} exact />
@@ -40,6 +45,7 @@ const AppRouter = () => (
         <UserRoute path="/objects/:id" component={ObjectPage} />
         <UserRoute path="/calendar" component={CalendarPage} exact />
         <UserRoute path="/settings" component={SettingsPage} />
+        <UserRoute path="/admin" component={AdminPage} />
       </Switch>
     </div>
   </BrowserRouter>

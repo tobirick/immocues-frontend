@@ -13,6 +13,11 @@ export default {
       return axios
         .post(`${apiURL}/users/validate_token`, { token })
         .then(response => response.data);
+    },
+    signUp: user => {
+      return axios
+        .post(`${apiURL}/users/register`, { user })
+        .then(response => response.data);
     }
   },
   customers: {

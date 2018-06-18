@@ -1,4 +1,4 @@
-import { LOGIN_USER, SIGN_OUT_USER } from "../constants/auth";
+import { LOGIN_USER, SIGN_OUT_USER, SIGN_UP_USER } from "../constants/auth";
 import api from "../api/api";
 import setAuthorizationHeader from "../helpers/utils/setAuthorizationHeader";
 import { unsetCustomers, startFetchAllCustomers } from "./customers";
@@ -41,5 +41,22 @@ export const validateToken = () => {
     return api.user
       .validateToken(localStorage.getItem("immocuesJWT"))
       .then(response => response);
+  };
+};
+
+const signUp = user => {
+  return {
+    type: SIGN_UP_USER,
+    payload: {
+      user
+    }
+  };
+};
+
+export const startSignUp = user => {
+  return dispatch => {
+    return api.user.signUp(user).then(response => {
+      dispatch(signUp(response.user));
+    });
   };
 };
