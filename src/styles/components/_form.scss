@@ -117,3 +117,79 @@
     }
   }
 }
+
+.react-datepicker-wrapper,
+.react-datepicker__input-container {
+  width: 100%;
+}
+
+.react-datepicker {
+  font-family: $default-font-family;
+  color: $default-text-color;
+  border: none;
+  border-radius: 3px;
+  @include box-shadow();
+  padding: 1.5rem;
+
+  &__header {
+    background-color: transparent;
+  }
+
+  &__navigation {
+    top: 30px;
+    @include transition(0.2s ease-in all);
+
+    &--next {
+      border-left-color: $default-text-color;
+
+      &:hover {
+        border-left-color: $primary-color;
+        opacity: 1;
+      }
+    }
+
+    &--previous {
+      border-right-color: $default-text-color;
+
+      &:hover {
+        border-right-color: $primary-color;
+        opacity: 1;
+      }
+    }
+  }
+
+  &__triangle {
+    display: none;
+  }
+  &__current-month {
+    font-size: 1.8rem;
+    color: $default-text-color;
+    margin-bottom: 1.2rem;
+  }
+
+  &__day-name {
+    color: $default-text-color;
+    font-size: 1.2rem;
+    width: 2.5rem;
+    line-height: 2.5rem;
+    font-weight: bold;
+  }
+
+  &__day {
+    color: $default-text-color;
+    font-size: 1.2rem;
+    width: 2.5rem;
+    line-height: 2.5rem;
+
+    &--outside-month {
+      opacity: 0.6;
+    }
+
+    &--keyboard-selected,
+    &--selected,
+    &:hover {
+      color: #fff;
+      background-color: $primary-color;
+    }
+  }
+}

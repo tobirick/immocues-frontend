@@ -11,7 +11,7 @@ const EmployeesListItem = ({ employee }) => {
         {employee.firstName} {employee.lastName}
       </div>
       <div className="list__item-col">{employee.title}</div>
-      <div className="list__item-col">{employee.eMail}</div>
+      <div className="list__item-col">{employee.email}</div>
       <div className="list__item-col">{employee.phoneNumber}</div>
     </div>
   );

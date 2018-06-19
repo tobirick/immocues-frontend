@@ -27,6 +27,7 @@
       "extract-text-webpack-plugin": "^3.0.2",
       "google-map-react": "^1.0.4",
       "jwt-decode": "^2.2.0",
+      "moment": "^2.22.2",
       "node-sass": "^4.9.0",
       "prop-types": "^15.6.1",
       "react": "^16.4.0",

@@ -7,12 +7,27 @@ import SubHeader from "../../components/Layout/SubHeader";
 import { startSignUp } from "../../actions/auth";
 import TextInput from "../../helpers/form/TextInput";
 import PlaceInput from "../../helpers/form/PlaceInput";
+import SelectInput from "../../helpers/form/SelectInput";
+import DateInput from "../../helpers/form/DateInput";
 
 import validate from "../../validators/newUserForm";
 
 const mapActions = dispatch => ({
   startSignUp: user => dispatch(startSignUp(user))
 });
+
+const genderOptions = [
+  {
+    key: "male",
+    text: "Male",
+    value: "male"
+  },
+  {
+    key: "female",
+    text: "Female",
+    value: "female"
+  }
+];
 
 class NewEmployeePage extends Component {
   state = {
@@ -163,7 +178,8 @@ class NewEmployeePage extends Component {
                     id="birthdate"
                     name="birthDate"
                     type="text"
-                    component={TextInput}
+                    component={DateInput}
+                    dateFormat="YYYY-MM-DD"
                     placeholder="Birth Date"
                   />
                 </div>
@@ -175,7 +191,8 @@ class NewEmployeePage extends Component {
                     id="gender"
                     name="gender"
                     type="text"
-                    component={TextInput}
+                    component={SelectInput}
+                    options={genderOptions}
                     placeholder="Gender"
                   />
                 </div>
@@ -189,7 +206,8 @@ class NewEmployeePage extends Component {
                     id="startedworking"
                     name="stoppedWorking"
                     type="text"
-                    component={TextInput}
+                    component={DateInput}
+                    dateFormat="YYYY-MM-DD"
                     placeholder="Started working"
                   />
                 </div>
@@ -201,7 +219,8 @@ class NewEmployeePage extends Component {
                     id="stoppedworking"
                     name="startedWorking"
                     type="text"
-                    component={TextInput}
+                    component={DateInput}
+                    dateFormat="YYYY-MM-DD"
                     placeholder="Stopped working"
                   />
                 </div>
