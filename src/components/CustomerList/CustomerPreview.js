@@ -14,7 +14,7 @@ const CustomerPreview = ({ customer, setCustomer }) => {
         </div>
         <div className="df">
           <div className="customer__preview-button mr-2">
-            <i className="fal fa-user-edit" />
+            <i className="far fa-user-edit" />
           </div>
           <div onClick={setCustomer({})} className="customer__preview-button">
             <i className="fal fa-times-circle" />

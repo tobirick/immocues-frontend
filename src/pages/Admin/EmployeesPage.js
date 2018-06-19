@@ -12,7 +12,7 @@ const EmployeesPage = ({ employees }) => {
   return (
     <div>
       <div className="space-h-flex center-v-flex mb-2">
-        <h1>Employees Page</h1>
+        <h1>Employees ({employees.length})</h1>
         <Link className="button-primary" to="/employees/new">
           New Employee
         </Link>
