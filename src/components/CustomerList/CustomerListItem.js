@@ -7,7 +7,7 @@ class CustomerListItem extends Component {
     return (
       <div
         onClick={setCustomer(customer)}
-        className={`list__item ${isSelected ? "selected" : ""}`}
+        className={`list__item clickable ${isSelected ? "selected" : ""}`}
       >
         <div className="list__item-col list__item-col--big list__item-col--name">
           <img
