@@ -51,6 +51,7 @@ class NewEmployeePage extends Component {
   };
 
   onFormSubmit = values => {
+    values.profileImageSrc = "/img/default-profile.png";
     this.props.startSignUp(values).then(() => {
       this.props.reset();
       this.props.history.push("/admin/employees");

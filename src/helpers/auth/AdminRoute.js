@@ -5,7 +5,7 @@ import { Route, Redirect } from "react-router-dom";
 
 const mapState = state => {
   return {
-    isAdmin: state.auth.currentUser.isAdmin
+    isAdmin: state.auth.currentUser.isAdmin || false
   };
 };
 

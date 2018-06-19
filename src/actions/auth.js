@@ -27,6 +27,9 @@ export const startLogin = credentials => {
       setAuthorizationHeader(response.token);
       dispatch(login(response.user));
       dispatch(startFetchAllCustomers());
+      if (response.user.isAdmin) {
+        dispatch(startFetchAllUsers());
+      }
     });
   };
 };
@@ -41,6 +44,7 @@ export const startSignOut = () => {
     setAuthorizationHeader();
     dispatch(signOut());
     dispatch(unsetCustomers());
+    dispatch(unsetUsers());
   };
 };
 
@@ -79,7 +83,7 @@ const fetchAllUsers = users => {
 
 export const startFetchAllUsers = () => {
   return dispatch => {
-    return api.users.fetchAll().then(usersData => {
+    return api.user.fetchAll().then(usersData => {
       const users = [];
       usersData.forEach(user => {
         users.push(user);

@@ -21,7 +21,7 @@ export class LoginPage extends Component {
       .then(() => {
         this.props.history.push("/dashboard");
       })
-      .catch(() => {
+      .catch(error => {
         this.setState({
           error: true
         });
